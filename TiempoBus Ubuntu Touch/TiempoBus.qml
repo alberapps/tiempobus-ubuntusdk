@@ -1,3 +1,21 @@
+/**
+ *  TiempoBus - Informacion sobre tiempos de paso de autobuses en Alicante
+ *  Copyright (C) 2013 Alberto Montiel
+ *
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 import QtQuick 2.0
 import Ubuntu.Components 0.1
 import Ubuntu.Components.ListItems 0.1 as ListItem
@@ -138,7 +156,7 @@ MainView {
             tools: ToolbarActions {
 
                 Action {
-                    text: "Favoritos"
+                    text: i18n.tr("Favoritos")
                     iconSource: Qt.resolvedUrl("call_icon.png")
                     onTriggered: {
                         cargarFavoritos();
@@ -146,17 +164,23 @@ MainView {
                     }
                 }
                 Action {
-                    text: "Guardar"
+                    text: i18n.tr("Guardar")
                     iconSource: Qt.resolvedUrl("call_icon.png")
                     onTriggered: {modificarFavorito = '';
                         paradaModificar = paradaActual;
                         pageStack.push(formGuardar);}
                 }
                 Action {
-                    text: "Acerca de"
+                    text: i18n.tr("Acerca de")
                     iconSource: Qt.resolvedUrl("call_icon.png")
                     onTriggered: pageStack.push(acercade)
                 }
+                Action {
+                    text: i18n.tr("Buscador")
+                    iconSource: Qt.resolvedUrl("call_icon.png")
+                    onTriggered: pageStack.push(buscador)
+                }
+
 
             }
 
@@ -371,6 +395,63 @@ MainView {
 
             }
 
+
+        Page {
+
+
+            title: i18n.tr("Buscador")
+            id: buscador
+            visible: false
+
+
+            Column {
+
+                spacing: units.gu(1)
+                anchors {
+                    margins: units.gu(2)
+                    fill: parent
+                }
+
+
+
+                                ListItem.Header { text: i18n.tr("Lineas") }
+
+
+                                ListView{
+                                    id:listadoLineas
+                                    width: parent.width
+                                    height: parent.height - units.gu(10)
+                                    model: lineasList
+                                    delegate: ListItem.Subtitled{
+
+                                        text: linea
+                                        subText: descripcion
+
+                                        onClicked: cargarParadas("PRUEBA")
+
+                                    }
+
+                                }
+
+
+                            }
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
@@ -441,6 +522,30 @@ MainView {
             descripcion: ""
             rowid: 0
             operacion: ""
+
+        }
+
+    }
+
+    //Modelo para listado de lineas
+    ListModel {
+        id: lineasList
+        ListElement {
+            linea: "prueba"
+            descripcion: "desc1"
+
+
+        }
+
+    }
+
+    //Modelo para listado de paradas
+    ListModel {
+        id: paradasList
+        ListElement {
+            parada: "prueba"
+            descripcion: "desc1"
+
 
         }
 
@@ -730,6 +835,104 @@ MainView {
     }
 
 
+
+/** BUSCADOR DE PARADAS**/
+
+
+    function cargarParadas(linea){
+
+        //console.log("cargar tiempos parada: " + parada);
+
+        indeterminateBar.visible = true;
+
+        paradasList.clear();
+
+
+        var doc = new XMLHttpRequest();
+
+        doc.open("GET", "http://www.subus.es/Lineas/kml/ALC21ParadasIda.xml", true);
+
+
+        doc.onreadystatechange = function(){
+
+            if(doc.readyState === XMLHttpRequest.HEADERS_RECEIVED){
+                showRequestInfo("Headers: ");
+                showRequestInfo(doc.getAllResponseHeaders());
+                showRequestInfo("last modified: ");
+                showRequestInfo(doc.getResponseHeader("Last-Modified"));
+
+
+
+            }else if(doc.readyState === XMLHttpRequest.DONE){
+
+                showRequestInfo("salida: " + doc.responseText);
+
+                var a = doc.responseXML.documentElement;
+
+                for(var ii = 0; ii<a.childNodes[1].childNodes[15].childNodes.length;++ii){
+
+                    //console.debug("nodo: " + a.childNodes[1].childNodes[15].childNodes[ii].nodeName);
+                    if(a.childNodes[1].childNodes[15].childNodes[ii].nodeName === 'Placemark'){
+                        console.debug("nodo: " + a.childNodes[1].childNodes[15].childNodes[ii].childNodes[1].childNodes[0].nodeValue);
+                        console.debug("nodo desc: " + a.childNodes[1].childNodes[15].childNodes[ii].childNodes[3].childNodes[0].nodeValue);
+                    }
+
+                }
+                //console.debug("nodo: " + a.childNodes[1].childNodes[15].childNodes[5].nodeName);
+
+                //console.debug("nodo: " + a.childNodes[1].childNodes[15].childNodes[5].nodeName);
+
+
+                /*for(var ii = 0; ii<a.childNodes[0].childNodes[0].childNodes[0].childNodes.length;++ii){
+
+                    //PasoParada
+                    var pasoParada = a.childNodes[0].childNodes[0].childNodes[0].childNodes[ii];
+
+                    //e1
+                    var minutos1 = pasoParada.childNodes[1].childNodes[0].childNodes[0].nodeValue;
+
+                    //e1
+                    var minutos2 = pasoParada.childNodes[2].childNodes[0].childNodes[0].nodeValue;
+
+                    //linea
+                    var linea = pasoParada.childNodes[3].childNodes[0].nodeValue;
+
+                    //parada
+                    var parada = pasoParada.childNodes[4].childNodes[0].nodeValue;
+
+                    //ruta
+                    var ruta = pasoParada.childNodes[5].childNodes[0].nodeValue;
+
+
+                    showRequestInfo("Node: " + parada + linea + ruta + minutos1 + minutos2);
+
+                    tiempos.append({"parada": parada, "linea": linea, "ruta": ruta, "minutos1": minutos1, "minutos2": minutos2});
+
+                }*/
+
+               /* showRequestInfo("prueba: " + tiempos.getParada(1));
+*/
+                showRequestInfo("DONE: Headers: ");
+                showRequestInfo(doc.getAllResponseHeaders());
+                showRequestInfo("last modified: ");
+                showRequestInfo(doc.getResponseHeader("Last-Modified"));
+
+
+
+            }
+
+
+
+
+            indeterminateBar.visible = false;
+        }
+
+
+        doc.setRequestHeader('Content-Type','text/xml; charset=utf-8');
+
+        doc.send();
+
+    }
 
 
 
