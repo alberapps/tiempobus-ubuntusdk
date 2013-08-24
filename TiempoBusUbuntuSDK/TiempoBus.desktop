@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=TiempoBus
-Comment=My project description
-Exec=/usr/bin/qmlscene $@ /usr/share/TiempoBus/TiempoBus.qml
-Icon=qmlscene
-Terminal=false
-Type=Application
-X-Ubuntu-Touch=true
