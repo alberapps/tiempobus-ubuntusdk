@@ -1,5 +1,5 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: tiempobusubuntusdk
+Upstream-Name: tiempobus
 Source: <https://code.launchpad.net/tiempobus>
 
 Files: *
