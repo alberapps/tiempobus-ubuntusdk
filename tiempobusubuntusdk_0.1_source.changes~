@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Sat, 24 Aug 2013 17:52:08 +0200
+Source: tiempobusubuntusdk
+Binary: tiempobusubuntusdk
+Architecture: source
+Version: 0.1
+Distribution: unstable
+Urgency: low
+Maintainer: Alberto Montiel <alberapps@gmail.com>
+Changed-By: Albert <albert@unknown>
+Description: 
+ tiempobusubuntusdk - <TiempoBus>
+Changes: 
+ tiempobusubuntusdk (0.1) unstable; urgency=low
+ .
+   * Initial Release.
+Checksums-Sha1: 
+ 9e927af78c3808d2d49c6e47a0c353bbb8a82a26 606 tiempobusubuntusdk_0.1.dsc
+ 558703548975bab4e56945c43eda954c5f0715e5 60120 tiempobusubuntusdk_0.1.tar.gz
+Checksums-Sha256: 
+ e32b2e43bef3c6664979bd6a84aedf77f4fa3f946f0472bcb27a73049f2ecea8 606 tiempobusubuntusdk_0.1.dsc
+ 62a7b92e1ad7da17d36e894d3ce0bb7879b806a69cfb0cc369256924e9771761 60120 tiempobusubuntusdk_0.1.tar.gz
+Files: 
+ 13256cba6572bb975162253c42f2a59e 606 unknown extra tiempobusubuntusdk_0.1.dsc
+ a6ebc5fd00c9aaeffabd5fff094621bf 60120 unknown extra tiempobusubuntusdk_0.1.tar.gz

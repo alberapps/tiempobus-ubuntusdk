@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-24 13:56+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/components/RemovableBG.qml:32
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/components/RemovableBG.qml:66
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/components/RemovableBGLineas.qml:32
+msgid "Borrar"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/components/RemovableBG.qml:52
+msgid "Modificar"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/components/RemovableBGLineas.qml:52
+msgid "Ida"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/components/RemovableBGLineas.qml:66
+msgid "Vuelta"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:63
+msgid "TiempoBus"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:86
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:300
+msgid "Sin resultados"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:128
+msgid "Parada"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:139
+msgid "Cargar"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:158
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:282
+msgid "Favoritos"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:166
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:259
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:557
+msgid "Guardar"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:173
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:385
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:562
+msgid "Acerca de"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:178
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:402
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:493
+msgid "Buscador"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:205
+msgid "Guardar parada"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:232
+msgid "Titulo"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:241
+msgid "Descripcion"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:417
+msgid "Lineas"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:449
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:508
+msgid "Paradas Ida"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:457
+msgid "Paradas Vuelta"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:700
+msgid "Parada: "
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:725
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:739
+msgid "min."
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:734
+msgid "En la parada"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:739
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:748
+msgid "y"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/alberappsgit_ut/TiempoBusUbuntuSDK/TiempoBus.qml:748
+msgid "Sin estimacion"
+msgstr ""
