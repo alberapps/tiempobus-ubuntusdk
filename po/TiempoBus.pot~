@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-25 18:29+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBGLineas.qml:32
+#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBG.qml:32
+#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBG.qml:66
+msgid "Borrar"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBGLineas.qml:52
+msgid "Ida"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBGLineas.qml:66
+msgid "Vuelta"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBG.qml:52
+msgid "Modificar"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:64
+msgid "TiempoBus"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:88
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:331
+msgid "No information"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:112
+msgid "Aviso"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:115
+msgid ""
+"Time offered by ISAE system, which offers, in REAL TIME, the time of arrival "
+"ESTIMATES in TAM net. These times may vary for reasons unrelated to the app, "
+"as traffic, route changes, etc. Features using the local database may not "
+"show the latest route changes. This application is UNofficial and its "
+"development is independent. Line data and step times obtained from: www."
+"subus.es and isaealicante.subus.es/movil/index.aspx\n"
+"Learn more: alberapps.blogspot.com and at Twitter: @alberapps"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:146
+msgid "Bus stop"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:158
+msgid "Load"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:172
+msgid "* Arrastrar arriba para desplegar el menu"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:187
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:313
+msgid "Favorites"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:196
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:236
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:290
+msgid "Save"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:203
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:441
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:539
+msgid "Search"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:208
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:424
+msgid "Settings"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:263
+msgid "Label"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:272
+msgid "Description"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:412
+msgid ""
+"* Click para cargar el favorito. Arrastrar derecha para Modificar. Arrastrar "
+"izquierda para Borrar"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:488
+msgid "Forward"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:496
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:554
+msgid "Backward"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:523
+msgid ""
+"* Arrastrar derecha para Paradas Ida. Arrastrar izquierda para Paradas Vuelta"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:746
+msgid "Parada: "
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:771
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:785
+msgid "min."
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:780
+msgid "At bus stop"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:785
+msgid "&"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:794
+msgid "y"
+msgstr ""
+
+#: /home/albert/UbuntuSDK/git/tiempobus/TiempoBus.qml:794
+msgid "No data"
+msgstr ""

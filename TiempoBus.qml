@@ -70,7 +70,7 @@ MainView {
             Label {
                 id: tituloParada
                 //anchors.topMargin: parent
-                text: "Parada: "
+                text: "Bus stop: "
             }
 
             Column {
@@ -85,7 +85,7 @@ MainView {
                 Label {
                     id: listadoVacio
                     anchors.centerIn: parent
-                    text: i18n.tr("Sin resultados")
+                    text: i18n.tr("No information")
                     visible: false
                 }
 
@@ -112,7 +112,7 @@ MainView {
                         text: i18n.tr("Aviso")
 
 
-                        subText: i18n.tr("Tiempos obtenidos del sistema ISAE, que ofrece, en TIEMPO REAL, la ESTIMACIÓN de tiempos de paso de la red TAM. Estos tiempos pueden variar por razones ajenas a la aplicación, como el tráfico, cambios de recorrido, etc. Las funciones que usan la base de datos, pueden no disponer de los últimos cambios en los recorridos. Esta aplicación NO es oficial y se desarrolla de forma independiente. Datos de líneas y tiempos obtenidos de: www.subus.es y isaealicante.subus.es/movil \nMás información: alberapps.blogspot.com y en Twitter: @alberapps")
+                        subText: i18n.tr("Time offered by ISAE system, which offers, in REAL TIME, the time of arrival ESTIMATES in TAM net. These times may vary for reasons unrelated to the app, as traffic, route changes, etc. Features using the local database may not show the latest route changes. This application is UNofficial and its development is independent. Line data and step times obtained from: www.subus.es and isaealicante.subus.es/movil/index.aspx\nLearn more: alberapps.blogspot.com and at Twitter: @alberapps")
 
 
                     }
@@ -143,7 +143,7 @@ MainView {
 
                     TextField {
                         id: entradaParada
-                        placeholderText: i18n.tr("Parada")
+                        placeholderText: i18n.tr("Bus stop")
 
                         anchors.left: hora.right
                         anchors.leftMargin: units.gu(2)
@@ -155,7 +155,7 @@ MainView {
 
                     Button {
                         id: botonTiempos
-                        text: i18n.tr("Cargar")
+                        text: i18n.tr("Load")
                         onClicked: paradaSeleccionada()
                         anchors.left: entradaParada.right
                         anchors.leftMargin: units.gu(2)
@@ -184,7 +184,7 @@ MainView {
                 locked: false
 
                 Action {
-                    text: i18n.tr("Favoritos")
+                    text: i18n.tr("Favorites")
                     iconSource: Qt.resolvedUrl("ic_menu_favoritos.png")
 
                     onTriggered: {
@@ -193,19 +193,19 @@ MainView {
                     }
                 }
                 Action {
-                    text: i18n.tr("Guardar")
+                    text: i18n.tr("Save")
                     iconSource: Qt.resolvedUrl("ic_menu_guardar.png")
                     onTriggered: {modificarFavorito = '';
                         paradaModificar = paradaActual;
                         pageStack.push(formGuardar);}
                 }
                 Action {
-                    text: i18n.tr("Buscador")
+                    text: i18n.tr("Search")
                     iconSource: Qt.resolvedUrl("ic_menu_ida.png")
                     onTriggered: pageStack.push(buscador)
                 }
                 Action {
-                    text: i18n.tr("Acerca de")
+                    text: i18n.tr("Settings")
                     iconSource: Qt.resolvedUrl("ic_menu_preferencias.png")
                     onTriggered: pageStack.push(acercade)
                 }
@@ -233,7 +233,7 @@ MainView {
 
 
         Page {
-            title: i18n.tr("Guardar parada")
+            title: i18n.tr("Save")
             id: formGuardar
             visible: false
 
@@ -260,7 +260,7 @@ MainView {
 
 
                 TemplateRow {
-                    title: i18n.tr("Titulo")
+                    title: i18n.tr("Label")
 
                     TextField {
                         id: inputTitulo
@@ -269,7 +269,7 @@ MainView {
                 }
 
                 TemplateRow {
-                    title: i18n.tr("Descripcion")
+                    title: i18n.tr("Description")
                     height: inputDescripcion.height
 
                     TextArea {
@@ -287,7 +287,7 @@ MainView {
 
                     Button {
                         id:botonGuardar
-                        text: i18n.tr("Guardar")
+                        text: i18n.tr("Save")
                         width: units.gu(12)
                         onClicked: {
                             guardarFavorito(inputTitulo.text, inputDescripcion.displayText);
@@ -310,7 +310,7 @@ MainView {
         Page {
 
             id: paginaFavoritos
-            title: i18n.tr("Favoritos")
+            title: i18n.tr("Favorites")
             Component.onCompleted: cargarFavoritos();
             visible: false
 
@@ -328,7 +328,7 @@ MainView {
                 Label {
                     id: listadoVacioFavoritos
                     anchors.centerIn: parent
-                    text: i18n.tr("Sin resultados")
+                    text: i18n.tr("No information")
                     visible: false
                 }
 
@@ -421,7 +421,7 @@ MainView {
 
 
         Page {
-            title: i18n.tr("Acerca de")
+            title: i18n.tr("Settings")
             id: acercade
             visible: false
 
@@ -438,7 +438,7 @@ MainView {
         Page {
 
 
-            title: i18n.tr("Buscador")
+            title: i18n.tr("Search")
             id: buscador
             visible: false
             Component.onCompleted: cargarLineas();
@@ -485,7 +485,7 @@ MainView {
 
                                 cargarParadas(lineasList.get(index).linea, "ida");
 
-                                headerParadas.text = i18n.tr("Paradas Ida");
+                                headerParadas.text = i18n.tr("Forward");
 
 
                                 pageStack.push(buscadorParadasIda);
@@ -493,7 +493,7 @@ MainView {
 
                                 cargarParadas(lineasList.get(index).linea, "vuelta");
 
-                                headerParadas.text = i18n.tr("Paradas Vuelta");
+                                headerParadas.text = i18n.tr("Backward");
 
                                 pageStack.push(buscadorParadasIda);
                             }
@@ -536,7 +536,7 @@ MainView {
         Page {
 
 
-            title: i18n.tr("Buscador")
+            title: i18n.tr("Search")
             id: buscadorParadasIda
             visible: false
 
@@ -551,7 +551,7 @@ MainView {
 
 
 
-                ListItem.Header {id: headerParadas; text: i18n.tr("Paradas Ida") }
+                ListItem.Header {id: headerParadas; text: i18n.tr("Backward") }
 
 
                 ListView{
@@ -593,7 +593,7 @@ MainView {
 
     }
 
-
+/*
     Component {
         id: actionSelectionPopover
 
@@ -612,7 +612,7 @@ MainView {
             }
         }
     }
-
+*/
 
 
 
@@ -751,7 +751,7 @@ MainView {
 
 
         if(tiempos.count < 1){
-            //listadoVacio.visible=true;
+         //   listadoVacio.visible=true;
         }
 
         paradaActual = entradaParada.text;
@@ -777,12 +777,12 @@ MainView {
             dato+= " (" + Qt.formatTime(dateTime,"hh:mm") + ")"
 
         }else{
-            dato+= i18n.tr("En la parada")
+            dato+= i18n.tr("At bus stop")
         }
 
         if(minutos2 !== '-1'){
 
-            dato+= " " + i18n.tr("y") +  " " + minutos2 + " " + i18n.tr("min.")
+            dato+= " " + i18n.tr("&") +  " " + minutos2 + " " + i18n.tr("min.")
 
             //Hora
             var dateTime2 = new Date();
@@ -791,7 +791,7 @@ MainView {
             dato+= " (" + Qt.formatTime(dateTime2,"hh:mm") + ")"
 
         }else{
-            dato+= i18n.tr("y") + " " + i18n.tr("Sin estimacion")
+            dato+= i18n.tr("y") + " " + i18n.tr("No data")
         }
 
 
