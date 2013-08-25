@@ -1,5 +1,5 @@
 Source: tiempobus
-Section: header
+Section: misc
 Priority: extra
 Maintainer: Alberto Montiel <alberapps@gmail.com>
 Build-Depends: debhelper (>= 8.0.0)
