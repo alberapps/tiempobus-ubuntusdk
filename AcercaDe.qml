@@ -22,12 +22,24 @@ import "components"
 
 Item{
 
+Image {
+    id: imagen
+    anchors.centerIn: parent
+    source: Qt.resolvedUrl("ic_tiempobus_3-web.png")
+    width: units.gu(10)
+    height: units.gu(10)
+
+}
+
 Label {
     id: texto1
-    anchors.centerIn: parent
+    anchors.top: imagen.bottom
+    anchors.horizontalCenter: imagen.horizontalCenter
     text: "TiempoBus 0.1"
     fontSize: "x-large"
 }
+
+
 
 Label {
     id:texto3

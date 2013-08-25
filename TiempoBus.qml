@@ -62,13 +62,14 @@ MainView {
 
             id: paginaTiempos
             title: i18n.tr("TiempoBus")
+
             Component.onCompleted: cargaInicial();
 
 
 
             Label {
                 id: tituloParada
-                anchors.topMargin: parent
+                //anchors.topMargin: parent
                 text: "Parada: "
             }
 
@@ -104,18 +105,34 @@ MainView {
                         }
                     }
 
+                    footer: ListItem.Subtitled{
+
+
+
+                        text: i18n.tr("Aviso")
+
+
+                        subText: i18n.tr("Tiempos obtenidos del sistema ISAE, que ofrece, en TIEMPO REAL, la ESTIMACIÓN de tiempos de paso de la red TAM. Estos tiempos pueden variar por razones ajenas a la aplicación, como el tráfico, cambios de recorrido, etc. Las funciones que usan la base de datos, pueden no disponer de los últimos cambios en los recorridos. Esta aplicación NO es oficial y se desarrolla de forma independiente. Datos de líneas y tiempos obtenidos de: www.subus.es y isaealicante.subus.es/movil \nMás información: alberapps.blogspot.com y en Twitter: @alberapps")
+
+
+                    }
+
                 }
 
 
 
-                Item{
 
+
+
+
+                Item{
+                    id: entradaDatos
                     anchors.top: listadoTiempos.bottom
-                    anchors.bottomMargin: parent
+                    //anchors.bottomMargin: parent
                     anchors.horizontalCenter: parent.horizontalCenter
 
 
-                    width: parent.width / 2
+                    width: hora.width + entradaParada.width + botonTiempos.width
 
                     Label {
                         id: hora
@@ -137,6 +154,7 @@ MainView {
                     }
 
                     Button {
+                        id: botonTiempos
                         text: i18n.tr("Cargar")
                         onClicked: paradaSeleccionada()
                         anchors.left: entradaParada.right
@@ -148,16 +166,27 @@ MainView {
 
                 }
 
+                Label {
+                    id: avisoMenu
+                    anchors.top: parent.bottom
+                    text: i18n.tr("* Arrastrar arriba para desplegar el menu")
 
+                }
 
             }
 
 
+
+
             tools: ToolbarActions {
+
+                opened: true
+                locked: false
 
                 Action {
                     text: i18n.tr("Favoritos")
-                    iconSource: Qt.resolvedUrl("call_icon.png")
+                    iconSource: Qt.resolvedUrl("ic_menu_favoritos.png")
+
                     onTriggered: {
                         cargarFavoritos();
                         pageStack.push(paginaFavoritos);
@@ -165,21 +194,22 @@ MainView {
                 }
                 Action {
                     text: i18n.tr("Guardar")
-                    iconSource: Qt.resolvedUrl("call_icon.png")
+                    iconSource: Qt.resolvedUrl("ic_menu_guardar.png")
                     onTriggered: {modificarFavorito = '';
                         paradaModificar = paradaActual;
                         pageStack.push(formGuardar);}
                 }
                 Action {
-                    text: i18n.tr("Acerca de")
-                    iconSource: Qt.resolvedUrl("call_icon.png")
-                    onTriggered: pageStack.push(acercade)
-                }
-                Action {
                     text: i18n.tr("Buscador")
-                    iconSource: Qt.resolvedUrl("call_icon.png")
+                    iconSource: Qt.resolvedUrl("ic_menu_ida.png")
                     onTriggered: pageStack.push(buscador)
                 }
+                Action {
+                    text: i18n.tr("Acerca de")
+                    iconSource: Qt.resolvedUrl("ic_menu_preferencias.png")
+                    onTriggered: pageStack.push(acercade)
+                }
+
 
 
             }
@@ -245,7 +275,7 @@ MainView {
                     TextArea {
                         id: inputDescripcion
                         textFormat:TextEdit.RichText
-                        text: longText
+                        //text: longText
 
                     }
                 }
@@ -376,6 +406,14 @@ MainView {
 
                 }
 
+                Label {
+                    id: avisoFavorito
+                    anchors.top: parent.bottom
+                    text: i18n.tr("* Click para cargar el favorito. Arrastrar derecha para Modificar. Arrastrar izquierda para Borrar")
+
+                }
+
+
             }
 
         }
@@ -415,7 +453,7 @@ MainView {
 
 
 
-                ListItem.Header { text: i18n.tr("Lineas") }
+                //ListItem.Header { text: i18n.tr("Lineas") }
 
 
                 ListView{
@@ -476,6 +514,13 @@ MainView {
                         }
 
                     }
+
+                }
+
+                Label {
+                    id: avisoBuscador
+                    anchors.top: parent.bottom
+                    text: i18n.tr("* Arrastrar derecha para Paradas Ida. Arrastrar izquierda para Paradas Vuelta")
 
                 }
 

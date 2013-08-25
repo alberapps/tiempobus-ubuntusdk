@@ -12,4 +12,4 @@ Package: tiempobus
 Architecture: all
 Depends: ${misc:Depends},qtdeclarative5-localstorage-plugin,qtdeclarative5-qtquick2-plugin,qtdeclarative5-ubuntu-ui-toolkit-plugin|qt-components-ubuntu,qtdeclarative5-xmllistmodel-plugin,${shlibs:Depends},qmlscene
 Description: TiempoBus
- Consulta dinámica de tiempos de paso, para las lineas del TAM, de Alicante(Spain) e interurbanas(El Campello, San Juan, San Vicente del Raspeig y Mutxamel), Lanzaderas a la Universidad de Alicante, Autobús Turístico, Playa San Juan, etc.
+ Aplicación para la consulta de tiempos de paso de autobuses en Alicante, Spain
