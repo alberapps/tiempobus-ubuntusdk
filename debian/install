@@ -14,7 +14,11 @@ components/TemplateRow.qml /usr/share/tiempobus
 components/Template.qml /usr/share/tiempobus
 components/TemplateFlow.qml /usr/share/tiempobus
 components/WebLink.qml /usr/share/tiempobus
-messages.pot /usr/share/tiempobus
 TiempoBus.qml /usr/share/tiempobus
+ic_menu_favoritos.png /usr/share/tiempobus
+ic_menu_guardar.png /usr/share/tiempobus
+ic_menu_ida.png /usr/share/tiempobus
+ic_menu_preferencias.png /usr/share/tiempobus
+ic_tiempobus_3-web.png /usr/share/tiempobus
 call_icon@8.png /usr/share/tiempobus
 TiempoBus.desktop /usr/share/applications
