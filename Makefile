@@ -18,4 +18,4 @@ check:
         #qmltestrunner -input tests/unit
 
 run:
-	/usr/bin/qmlscene $@ TiempoBus.qml
+	/usr/bin/qmlscene $@ tiempobus.qml

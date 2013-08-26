@@ -1,0 +1,14 @@
+{
+    "description": "description of TiempoBus",
+    "framework": "ubuntu-sdk-13.10",
+    "hooks": {
+        "TiempoBus": {
+            "apparmor": "TiempoBus.json",
+            "desktop": "TiempoBus.desktop"
+        }
+    },
+    "maintainer": "",
+    "name": "com.ubuntu.developer.username.TiempoBus",
+    "title": "TiempoBus",
+    "version": "0.1"
+}

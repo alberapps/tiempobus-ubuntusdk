@@ -1,8 +1,11 @@
 [Desktop Entry]
+Encoding=UTF-8
+Version=0.1
 Name=TiempoBus
 Comment=My project description
-Exec=/usr/bin/qmlscene $@ /usr/share/tiempobus/TiempoBus.qml
+Exec=/usr/bin/qmlscene $@ /usr/share/tiempobus/tiempobus.qml
 Icon=/usr/share/tiempobus/ic_tiempobus_3-web.png
 Terminal=false
 Type=Application
 X-Ubuntu-Touch=true
+X-Ubuntu-Gettext-Domain=tiempobus

@@ -1,0 +1,6 @@
+tiempobus usr/bin/
+tiempobus.desktop usr/share/applications/
+*.qml usr/share/tiempobus/
+*.png usr/share/tiempobus/
+*.js usr/share/tiempobus/
+components/*.qml usr/share/tiempobus/components/

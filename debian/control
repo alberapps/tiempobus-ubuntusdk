@@ -2,11 +2,11 @@ Source: tiempobus
 Section: misc
 Priority: extra
 Maintainer: Alberto Montiel <alberapps@gmail.com>
-Build-Depends: debhelper (>= 8.0.0)
+Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.4
 Homepage: http://alberapps.blogspot.com
-#Vcs-Git: https://github.com/alberapps/tiempobus-ubuntusdk.git
-#Vcs-Browser: https://github.com/alberapps/tiempobus-ubuntusdk
+Vcs-Git: https://github.com/alberapps/tiempobus-ubuntusdk.git
+Vcs-Browser: https://github.com/alberapps/tiempobus-ubuntusdk
 
 Package: tiempobus
 Architecture: all
