@@ -8,4 +8,5 @@ Icon=/usr/share/tiempobus/ic_tiempobus_3-web.png
 Terminal=false
 Type=Application
 X-Ubuntu-Touch=true
+X-Ubuntu-StageHint=SideStage
 X-Ubuntu-Gettext-Domain=tiempobus

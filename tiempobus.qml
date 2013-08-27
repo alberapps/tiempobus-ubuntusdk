@@ -34,7 +34,7 @@ MainView {
     objectName: "mainView"
 
     // Note! applicationName needs to match the .desktop filename
-    applicationName: "TiempoBus"
+    applicationName: "tiempobus"
 
     /*
      This property enables the application to change orientation
@@ -101,7 +101,7 @@ MainView {
                         subText: formatearTiempos(minutos1,minutos2)
 
                         onClicked: {
-                            console.debug('prueba');
+                            console.debug('tiempo seleccionado');
                         }
                     }
 
@@ -109,7 +109,7 @@ MainView {
 
 
 
-                        text: i18n.tr("Aviso")
+                        text: i18n.tr("Notice")
 
 
                         subText: i18n.tr("Time offered by ISAE system, which offers, in REAL TIME, the time of arrival ESTIMATES in TAM net. These times may vary for reasons unrelated to the app, as traffic, route changes, etc. Features using the local database may not show the latest route changes. This application is UNofficial and its development is independent. Line data and step times obtained from: www.subus.es and isaealicante.subus.es/movil/index.aspx\nLearn more: alberapps.blogspot.com and at Twitter: @alberapps")
@@ -169,66 +169,59 @@ MainView {
                 Label {
                     id: avisoMenu
                     anchors.top: parent.bottom
-                    text: i18n.tr("* Arrastrar arriba para desplegar el menu")
+                    text: i18n.tr("* Slide up to display the menu")
 
                 }
 
             }
 
 
-
-
-            tools: ToolbarActions {
-
-                opened: true
-                locked: false
-
-                Action {
-                    text: i18n.tr("Favorites")
-                    iconSource: Qt.resolvedUrl("ic_menu_favoritos.png")
-
-                    onTriggered: {
-                        cargarFavoritos();
-                        pageStack.push(paginaFavoritos);
-                    }
-                }
-                Action {
-                    text: i18n.tr("Save")
-                    iconSource: Qt.resolvedUrl("ic_menu_guardar.png")
-                    onTriggered: {modificarFavorito = '';
-                        paradaModificar = paradaActual;
-                        pageStack.push(formGuardar);}
-                }
-                Action {
-                    text: i18n.tr("Search")
-                    iconSource: Qt.resolvedUrl("ic_menu_ida.png")
-                    onTriggered: pageStack.push(buscador)
-                }
-                Action {
-                    text: i18n.tr("Settings")
-                    iconSource: Qt.resolvedUrl("ic_menu_preferencias.png")
-                    onTriggered: pageStack.push(acercade)
-                }
-
-
-
-            }
-
-            /*
             tools: ToolbarItems {
-                ToolbarButton {
-                    id: actionsButton
-                    action: Action {
-                        iconSource: "call_icon.png"
-                        text: "Opciones"
-                        onTriggered: PopupUtils.open(actionSelectionPopover, actionsButton)
-                    }
-                 }
+                        ToolbarButton {
+                            action: Action {
+                                text: i18n.tr("Favorites")
+                                iconSource: Qt.resolvedUrl("ic_menu_favoritos.png")
 
-                locked: false
-                opened: true
-            }
-  */
+                                onTriggered: {
+                                    cargarFavoritos();
+                                    pageStack.push(paginaFavoritos);
+                                }
+                            }
+
+                        }
+                        ToolbarButton {
+                            action: Action {
+                                text: i18n.tr("Save")
+                                iconSource: Qt.resolvedUrl("ic_menu_guardar.png")
+                                onTriggered: {modificarFavorito = '';
+                                    paradaModificar = paradaActual;
+                                    pageStack.push(formGuardar);}
+                            }
+
+                        }
+
+                        ToolbarButton {
+                            action: Action {
+                                text: i18n.tr("Search")
+                                iconSource: Qt.resolvedUrl("ic_menu_ida.png")
+                                onTriggered: pageStack.push(buscador)
+                            }
+
+                        }
+
+                        ToolbarButton {
+                            text: i18n.tr("Settings")
+                            iconSource: Qt.resolvedUrl("ic_menu_preferencias.png")
+                            onTriggered: pageStack.push(acercade)
+
+                        }
+
+                        locked: false
+                        opened: true
+                    }
+
+
+
         }
 
 
@@ -409,7 +402,7 @@ MainView {
                 Label {
                     id: avisoFavorito
                     anchors.top: parent.bottom
-                    text: i18n.tr("* Click para cargar el favorito. Arrastrar derecha para Modificar. Arrastrar izquierda para Borrar")
+                    text: i18n.tr("* Click to load the favorite. Slide Right to Modify. Slide left to Remove")
 
                 }
 
@@ -520,7 +513,7 @@ MainView {
                 Label {
                     id: avisoBuscador
                     anchors.top: parent.bottom
-                    text: i18n.tr("* Arrastrar derecha para Paradas Ida. Arrastrar izquierda para Paradas Vuelta")
+                    text: i18n.tr("* Slide to the right, to Forward stops. Slide to the left to Backware stops")
 
                 }
 
@@ -715,12 +708,7 @@ MainView {
 
     }
 
-    function showRequestInfo(text){
 
-
-        console.log(text)
-
-    }
 
 
     /** GESTION DE TIEMPOS **/
@@ -743,16 +731,13 @@ MainView {
 
         var parada = entradaParada.text;
 
-        tituloParada.text = i18n.tr("Parada: ") + parada;
+        tituloParada.text = i18n.tr("Bus Stop: ") + parada;
 
         cargarTiempos(parada);
 
         hora.text = Qt.formatTime(new Date(),"hh:mm");
 
 
-        if(tiempos.count < 1){
-         //   listadoVacio.visible=true;
-        }
 
         paradaActual = entradaParada.text;
 
@@ -802,7 +787,7 @@ MainView {
     //Carga la lista de tiempos de la parada
     function cargarTiempos(parada){
 
-        console.log("cargar tiempos parada: " + parada);
+        console.debug("cargar tiempos parada: " + parada);
 
         indeterminateBar.visible = true;
 
@@ -826,21 +811,21 @@ MainView {
                 '</soap:Envelope>'
 
 
-        console.log(sr);
+        console.debug(sr);
 
         doc.onreadystatechange = function(){
 
             if(doc.readyState === XMLHttpRequest.HEADERS_RECEIVED){
-                showRequestInfo("Headers: ");
-                showRequestInfo(doc.getAllResponseHeaders());
-                showRequestInfo("last modified: ");
-                showRequestInfo(doc.getResponseHeader("Last-Modified"));
+                console.debug("Headers: ");
+                console.debug(doc.getAllResponseHeaders());
+                console.debug("last modified: ");
+                console.debug(doc.getResponseHeader("Last-Modified"));
 
 
 
             }else if(doc.readyState === XMLHttpRequest.DONE){
 
-                showRequestInfo("salida: " + doc.responseText);
+                console.debug("salida: " + doc.responseText);
 
                 var a = doc.responseXML.documentElement;
                 for(var ii = 0; ii<a.childNodes[0].childNodes[0].childNodes[0].childNodes.length;++ii){
@@ -864,18 +849,18 @@ MainView {
                     var ruta = pasoParada.childNodes[5].childNodes[0].nodeValue;
 
 
-                    showRequestInfo("Node: " + parada + linea + ruta + minutos1 + minutos2);
+                    console.debug("Node: " + parada + linea + ruta + minutos1 + minutos2);
 
                     tiempos.append({"parada": parada, "linea": linea, "ruta": ruta, "minutos1": minutos1, "minutos2": minutos2});
 
                 }
 
-                showRequestInfo("prueba: " + tiempos.getParada(1));
+                console.debug("prueba: " + tiempos.getParada(1));
 
-                showRequestInfo("DONE: Headers: ");
-                showRequestInfo(doc.getAllResponseHeaders());
-                showRequestInfo("last modified: ");
-                showRequestInfo(doc.getResponseHeader("Last-Modified"));
+                console.debug("DONE: Headers: ");
+                console.debug(doc.getAllResponseHeaders());
+                console.debug("last modified: ");
+                console.debug(doc.getResponseHeader("Last-Modified"));
 
 
 
@@ -885,6 +870,15 @@ MainView {
 
 
             indeterminateBar.visible = false;
+
+            console.debug("tiem: " + tiempos.count)
+
+            if(tiempos.count < 1){
+                listadoVacio.visible=true;
+            }else{
+                listadoVacio.visible=false;
+            }
+
         }
 
 
@@ -957,6 +951,13 @@ MainView {
                     }
                     )
 
+
+        if(favoritosList.count < 1){
+            listadoVacioFavoritos.visible=true;
+        }else{
+            listadoVacioFavoritos.visible=false;
+        }
+
     }
 
     //Borrar favorito de la base de datos
@@ -973,6 +974,12 @@ MainView {
                     }
 
                     )
+
+        if(favoritosList.count < 1){
+            listadoVacioFavoritos.visible=true;
+        }else{
+            listadoVacioFavoritos.visible=false;
+        }
 
     }
 
@@ -1017,10 +1024,10 @@ MainView {
         doc.onreadystatechange = function(){
 
             if(doc.readyState === XMLHttpRequest.HEADERS_RECEIVED){
-                showRequestInfo("Headers: ");
-                showRequestInfo(doc.getAllResponseHeaders());
-                showRequestInfo("last modified: ");
-                showRequestInfo(doc.getResponseHeader("Last-Modified"));
+                console.debug("Headers: ");
+                console.debug(doc.getAllResponseHeaders());
+                console.debug("last modified: ");
+                console.debug(doc.getResponseHeader("Last-Modified"));
 
 
 
@@ -1064,10 +1071,10 @@ MainView {
 
                 }
 
-                showRequestInfo("DONE: Headers: ");
-                showRequestInfo(doc.getAllResponseHeaders());
-                showRequestInfo("last modified: ");
-                showRequestInfo(doc.getResponseHeader("Last-Modified"));
+                console.debug("DONE: Headers: ");
+                console.debug(doc.getAllResponseHeaders());
+                console.debug("last modified: ");
+                console.debug(doc.getResponseHeader("Last-Modified"));
 
 
 

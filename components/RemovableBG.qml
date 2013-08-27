@@ -29,7 +29,7 @@ Rectangle {
 
         anchors.fill: parent
         verticalAlignment: Text.AlignVCenter
-        text: i18n.tr("Borrar")
+        text: i18n.tr("Delete")
         fontSize: "medium"
         color: "#e8e1d0"
         font.bold: true
@@ -49,7 +49,7 @@ Rectangle {
                 anchors.leftMargin: 0
                 horizontalAlignment: Text.AlignRight
 
-                text: i18n.tr("Modificar")
+                text: i18n.tr("Modify")
 
             }
         },
@@ -63,7 +63,7 @@ Rectangle {
                 anchors.leftMargin: __backgroundText.slidingMargin
                 horizontalAlignment: Text.AlignLeft
 
-                text: i18n.tr("Borrar")
+                text: i18n.tr("Delete")
             }
         }
     ]
