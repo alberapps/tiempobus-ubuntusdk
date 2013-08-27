@@ -1,4 +1,4 @@
-# Spanish translation for tiempobus
+# Catalan translation for tiempobus
 # Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the tiempobus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: tiempobus\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-08-27 18:53+0200\n"
-"PO-Revision-Date: 2013-08-27 17:42+0000\n"
+"PO-Revision-Date: 2013-08-27 17:40+0000\n"
 "Last-Translator: Alberto Montiel <alberapps@gmail.com>\n"
-"Language-Team: Spanish <es@li.org>\n"
+"Language-Team: Catalan <ca@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,23 +20,23 @@ msgstr ""
 #: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBG.qml:32
 #: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBG.qml:66
 msgid "Delete"
-msgstr "Borrar"
+msgstr "Elimina"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBG.qml:52
 msgid "Modify"
-msgstr "Modificar"
+msgstr "Modifica"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBGLineas.qml:32
 #: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBGLineas.qml:52
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:481
 msgid "Forward"
-msgstr "Ida"
+msgstr "Anar"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBGLineas.qml:66
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:489
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:547
 msgid "Backward"
-msgstr "Vuelta"
+msgstr "Tornar"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:64
 msgid "TiempoBus"
@@ -45,11 +45,11 @@ msgstr "TiempoBus"
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:88
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:324
 msgid "No information"
-msgstr "Sin información"
+msgstr "Sense informació"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:112
 msgid "Notice"
-msgstr "Aviso"
+msgstr "Avís"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:115
 msgid ""
@@ -61,14 +61,14 @@ msgid ""
 "www.subus.es and isaealicante.subus.es/movil/index.aspx\n"
 "Learn more: alberapps.blogspot.com and at Twitter: @alberapps"
 msgstr ""
-"Tiempos obtenidos del sistema ISAE, que ofrece, en TIEMPO REAL, la "
-"ESTIMACIÓN de tiempos de paso de la red TAM. Estos tiempos pueden variar por "
-"razones ajenas a la aplicación, como el tráfico, cambios de recorrido, etc. "
-"Las funciones que usan la base de datos, pueden no disponer de los últimos "
-"cambios en los recorridos. Esta aplicación NO es oficial y se desarrolla de "
-"forma independiente. Datos de líneas y tiempos obtenidos de: www.subus.es y "
-"isaealicante.subus.es/movil/index.aspxMás información: "
-"alberapps.blogspot.com y en Twitter: @alberapps"
+"Temps obtinguts del sistema ISAE, que oferix, en TEMPS REAL, la ESTIMACIÓ de "
+"temps de pas de la xarxa TAM. Els temps poden variar per raons alienes a l\\"
+"'aplicació, com el trànsit, canvis de recorregut, etc. Les funcions que "
+"utilitzen la base de dades local, poden no disposar dels últims canvis en "
+"els recorreguts. Esta aplicació NO és oficial i es desenvolupa de forma "
+"independent. Dades de línies i temps obtinguts de: www.subus.es i "
+"isaealicante.subus.es/movil\\nMés informació: alberapps.blogspot.com i al "
+"Twitter: @alberapps"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:146
 msgid "Bus stop"
@@ -76,16 +76,16 @@ msgstr "Parada"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:158
 msgid "Load"
-msgstr "Cargar"
+msgstr "Refrecar"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:172
 msgid "* Slide up to display the menu"
-msgstr "* Deslizar arriba para ver el menú"
+msgstr "* Lliscar cap amunt per desplegar el menú"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:182
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:306
 msgid "Favorites"
-msgstr "Favoritos"
+msgstr "Favorits"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:194
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:229
@@ -97,12 +97,12 @@ msgstr "Guardar"
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:434
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:532
 msgid "Search"
-msgstr "Buscar"
+msgstr "Cercar"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:213
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:417
 msgid "Settings"
-msgstr "Preferencias"
+msgstr "Preferències"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:256
 msgid "Label"
@@ -110,21 +110,20 @@ msgstr "Etiqueta"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:265
 msgid "Description"
-msgstr "Descripción"
+msgstr "Descripció"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:405
 msgid ""
 "* Click to load the favorite. Slide Right to Modify. Slide left to Remove"
 msgstr ""
-"* Click para cargar el favorito. Deslizar derecha para modificar. Deslizar "
-"izquierda para borrar"
+"* Click per carregar el favorit. Lliscar a la dreta per modificar, a la "
+"dreta per esborrar"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:516
 msgid ""
 "* Slide to the right, to Forward stops. Slide to the left to Backware stops"
 msgstr ""
-"Deslizar a la derecha para las paradas de Ida. Deslizar a la izquierda para "
-"las de vuelta"
+"Lliscar a la dreta per a les parades d'anada ia l'esquerra per les de tornada"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:734
 msgid "Bus Stop: "
@@ -137,31 +136,16 @@ msgstr "min."
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:765
 msgid "At bus stop"
-msgstr "En la parada"
+msgstr "A la parada"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:770
 msgid "&"
-msgstr "y"
+msgstr "i"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:779
 msgid "y"
-msgstr "y"
+msgstr "i"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:779
 msgid "No data"
-msgstr "Sin información"
-
-#~ msgid "Aviso"
-#~ msgstr "Aviso"
-
-#~ msgid "Modificar"
-#~ msgstr "Modificar"
-
-#~ msgid "Borrar"
-#~ msgstr "Borrar"
-
-#~ msgid "Vuelta"
-#~ msgstr "Vuelta"
-
-#~ msgid "Ida"
-#~ msgstr "Ida"
+msgstr "Sense Informació"
