@@ -35,7 +35,7 @@ Label {
     id: texto1
     anchors.top: imagen.bottom
     anchors.horizontalCenter: imagen.horizontalCenter
-    text: "TiempoBus 0.1"
+    text: "TiempoBus 0.5"
     fontSize: "x-large"
 }
 
