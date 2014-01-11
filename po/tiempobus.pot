@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-27 18:53+0200\n"
+"POT-Creation-Date: 2014-01-11 17:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,41 +17,36 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBG.qml:32
-#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBG.qml:66
+#: components/RemovableBG.qml:32 components/RemovableBG.qml:66
 msgid "Delete"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBG.qml:52
+#: components/RemovableBG.qml:52
 msgid "Modify"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBGLineas.qml:32
-#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBGLineas.qml:52
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:481
+#: components/RemovableBGLineas.qml:32 components/RemovableBGLineas.qml:52
+#: tiempobus.qml:481
 msgid "Forward"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBGLineas.qml:66
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:489
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:547
+#: components/RemovableBGLineas.qml:66 tiempobus.qml:489 tiempobus.qml:547
 msgid "Backward"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:64
+#: tiempobus.qml:64
 msgid "TiempoBus"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:88
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:324
+#: tiempobus.qml:88 tiempobus.qml:324
 msgid "No information"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:112
+#: tiempobus.qml:112
 msgid "Notice"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:115
+#: tiempobus.qml:115
 msgid ""
 "Time offered by ISAE system, which offers, in REAL TIME, the time of arrival "
 "ESTIMATES in TAM net. These times may vary for reasons unrelated to the app, "
@@ -62,79 +57,72 @@ msgid ""
 "Learn more: alberapps.blogspot.com and at Twitter: @alberapps"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:146
+#: tiempobus.qml:146
 msgid "Bus stop"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:158
+#: tiempobus.qml:158
 msgid "Load"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:172
+#: tiempobus.qml:172
 msgid "* Slide up to display the menu"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:182
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:306
+#: tiempobus.qml:182 tiempobus.qml:306
 msgid "Favorites"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:194
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:229
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:283
+#: tiempobus.qml:194 tiempobus.qml:229 tiempobus.qml:283
 msgid "Save"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:205
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:434
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:532
+#: tiempobus.qml:205 tiempobus.qml:434 tiempobus.qml:532
 msgid "Search"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:213
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:417
+#: tiempobus.qml:213 tiempobus.qml:417
 msgid "Settings"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:256
+#: tiempobus.qml:256
 msgid "Label"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:265
+#: tiempobus.qml:265
 msgid "Description"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:405
+#: tiempobus.qml:405
 msgid ""
 "* Click to load the favorite. Slide Right to Modify. Slide left to Remove"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:516
+#: tiempobus.qml:516
 msgid ""
 "* Slide to the right, to Forward stops. Slide to the left to Backware stops"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:734
+#: tiempobus.qml:734
 msgid "Bus Stop: "
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:756
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:770
+#: tiempobus.qml:756 tiempobus.qml:770
 msgid "min."
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:765
+#: tiempobus.qml:765
 msgid "At bus stop"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:770
+#: tiempobus.qml:770
 msgid "&"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:779
+#: tiempobus.qml:779
 msgid "y"
 msgstr ""
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:779
+#: tiempobus.qml:779
 msgid "No data"
 msgstr ""

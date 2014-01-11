@@ -1007,6 +1007,10 @@ MainView {
     //Cargar la lista de paradas del sentido indicado
     function cargarParadas(linea, sentido){
 
+
+        //cargarParadasNuevo(linea, sentido);
+
+
         //console.log("cargar tiempos parada: " + parada);
 
         indeterminateBar.visible = true;
@@ -1014,7 +1018,9 @@ MainView {
         paradasList.clear();
 
 
-        var url = generarUrlLinea(linea, sentido);
+
+
+        var url = generarUrlLineaNuevo(linea);
 
         var doc = new XMLHttpRequest();
 
@@ -1033,9 +1039,88 @@ MainView {
 
             }else if(doc.readyState === XMLHttpRequest.DONE){
 
-                showRequestInfo("salida: " + doc.responseText);
+               // showRequestInfo("salida: " + doc.responseText);
+                console.debug(doc.responseText);
+
 
                 var a = doc.responseXML.documentElement;
+
+                //var folderPrincipalList = a.getElementsByTagName('Folder');
+                var folderPrincipalList = getElementsByTagName(a, 'Folder');
+
+                var folderIda = folderPrincipalList[1];
+                var folderVuelta = folderPrincipalList[2];
+
+                var items;
+
+
+                if(sentido === 'ida'){
+                    //items = folderIda.getElementsByTagName('Placemark');
+                    items = getElementsByTagName(folderIda, 'Placemark')
+                }else{
+                    //items = folderVuelta.getElementsByTagName('Placemark');
+                    items = getElementsByTagName(folderVuelta, 'Placemark')
+                }
+
+
+                var item;
+                var datosPlaceMark;
+                var dato;
+                var etiqueta;
+                var descripcion;
+
+                for (var ii = 0; ii < items.length; ++ii) {
+
+                    item = items[ii];
+                    datosPlaceMark = item.childNodes;
+
+                    for (var j = 0; j < datosPlaceMark.length; ++j) {
+
+                        dato = datosPlaceMark[j];
+                        etiqueta = dato.nodeName;
+                        //console.log("etiqueta: " + etiqueta);
+
+                        if (etiqueta === "name") {
+                            var direccion = dato.childNodes[0].nodeValue;
+                        }
+
+                        if(etiqueta === 'description'){
+
+                            descripcion = dato.childNodes[0].nodeValue;
+                            console.log("valor: " + descripcion);
+
+                            var procesaDesc = descripcion.split(" ");
+
+                            var parada = procesaDesc[3].trim();
+
+                            // posicion sentido
+                            var sent = descripcion.indexOf("Sentido");
+                            var neas = descripcion.indexOf("neas");
+
+                            // lineas conexion
+                            var lineas = descripcion.substring(neas + 5, sent).trim();
+
+                            // Sentido
+                            var sentidoRecorrido = descripcion.substring(sent + 8).trim();
+
+                            console.debug("parada: " + parada + "lineas: " + lineas
+                                    + "sentido: " + sentidoRecorrido);
+
+
+                                paradasList.append({"parada": parada, "descripcion": descripcion, "lineas": lineas, "sentido": sentidoRecorrido, "direccion": direccion});
+
+
+
+                        }
+
+
+                    }
+
+
+                }
+
+
+                /*
 
                 for(var ii = 0; ii<a.childNodes[1].childNodes[15].childNodes.length;++ii){
 
@@ -1076,6 +1161,8 @@ MainView {
                 console.debug("last modified: ");
                 console.debug(doc.getResponseHeader("Last-Modified"));
 
+                */
+
 
 
             }
@@ -1092,6 +1179,9 @@ MainView {
         doc.send();
 
     }
+
+
+
 
     //Informacione estatica de las lineas
     property variant lineasDescripcion: ["21 ALICANTE-P.S.JUAN-EL CAMPELLO","22 ALICANTE-C. HUERTAS-P.S. JUAN","23 ALICANTE-SANT JOAN-MUTXAMEL","24 ALICANTE-UNIVERSIDAD-S.VICENTE","25 ALICANTE-VILLAFRANQUEZA","26 ALICANTE-VILLAFRANQUEZA-TANGEL","27 ALICANTE-URBANOVA","30 SAN VICENTE-EL REBOLLEDO","C-55 EL CAMPELLO-UNIVERSIDAD","34 LANZADERA UNIVERSIDAD","35 ALICANTE-PAULINAS-MUTXAMEL","36 SAN GABRIEL-UNIVERSIDAD","37 PADRE ESPLA-UNIVERSIDAD","38 P.S.JUAN-H.ST.JOAN-UNIVERSIDAD","39 EXPLANADA - C. TECNIFICACIÓN","21N ALICANTE- P.S.JUAN-EL CAMPELLO","22N ALICANTE- PLAYA SAN JUAN","23N ALICANTE- MUTXAMEL","24N ALICANTE-UNIVERSIDAD-S.VICENTE","25N PLAZA ESPAÑA - VILLAFRANQUEZA","01 S. GABRIEL-JUAN XXIII  (1ºS)","02 LA FLORIDA-SAGRADA FAMILIA","03 CIUDAD DE ASIS-COLONIA REQUENA","04 CEMENTERIO-TOMBOLA","05 EXPLANADA-SAN BLAS-RABASA","06 E.AUTOBUSES - COLONIA REQUENA","07 AV.ÓSCAR ESPLÁ-REBOLLEDO","8A VIRGEN DEL REMEDIO-EXPLANADA","09 AV.OSCAR ESPLA - AV. NACIONES","10 EXPLANADA-C.C. VISTAHERMOSA","11 PZ.LUCEROS-AV. DENIA-H.ST.JOAN","11H PZ.LUCEROS-H.ST JOAN","12 AV. CONSTITUCION-S. BLAS(PAUI)","16 PZA. ESPAÑA-MERCADILLO TEULADA","17 ZONA NORTE-MERCADILLO TEULADA","8B EXPLANADA-VIRGEN DEL REMEDIO","191 PLA - CAROLINAS - RICO PEREZ","192 C. ASIS - BENALUA - RICO PEREZ","M MUTXAMEL-URBANITZACIONS","CEM MUTXAMEL - CEMENTERIO","C2 VENTA LANUZA - EL CAMPELLO","C-51 MUTXAMEL - BUSOT","C-52 BUSOT - EL CAMPELLO","C-53 HOSPITAL SANT JOAN - EL CAMPELLO","C-54 UNIVERSIDAD-HOSP. SANT JOAN","C6 ALICANTE-AEROPUERTO","45 HOSPITAL-GIRASOLES-MANCHEGOS","46A HOSPITAL-VILLAMONTES-S.ANTONIO","46B HOSPITAL-P.CANASTELL-P.COTXETA","TURI BUS TURÍSTICO (TURIBUS)","31 MUTXAMEL-ST.JOAN-PLAYA S. JUAN","30P SAN VICENTE-PLAYA SAN JUAN","C6* ALICANTE-URBANOVA-AEROPUERTO"];
@@ -1126,8 +1216,51 @@ MainView {
     }
 
 
+    function generarUrlLineaNuevo(linea) {
+
+        var url = "http://www.subus.es/K/";
+
+        var urlSufijo = "";
 
 
+        urlSufijo = "P.xml";
+
+
+        var indiceLinea = lineasNum.indexOf(linea);
+
+        var urlCompleta = url + lineasCodigoKml[indiceLinea] + urlSufijo;
+
+        console.debug("urlIda: " + urlCompleta);
+
+        return urlCompleta;
+
+
+    }
+
+
+    function getElementsByTagName(rootElement, tagName){
+
+        var childNodes = rootElement.childNodes;
+        var elements = [];
+        for( var i = 0; i < childNodes.length;i++){
+
+            console.debug('nodo: ' + childNodes[i].nodeName);
+
+            if(childNodes[i].nodeName === tagName){
+                elements.push(childNodes[i]);
+            }
+
+            if(childNodes[i].childNodes.length > 0){
+
+                elements = elements.concat(getElementsByTagName(childNodes[i], tagName));
+
+            }
+
+        }
+
+        return elements;
+
+    }
 
 
 }

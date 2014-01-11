@@ -62,12 +62,12 @@ msgid ""
 "Learn more: alberapps.blogspot.com and at Twitter: @alberapps"
 msgstr ""
 "Temps obtinguts del sistema ISAE, que oferix, en TEMPS REAL, la ESTIMACIÓ de "
-"temps de pas de la xarxa TAM. Els temps poden variar per raons alienes a l\\"
+"temps de pas de la xarxa TAM. Els temps poden variar per raons alienes a l"
 "'aplicació, com el trànsit, canvis de recorregut, etc. Les funcions que "
 "utilitzen la base de dades local, poden no disposar dels últims canvis en "
 "els recorreguts. Esta aplicació NO és oficial i es desenvolupa de forma "
 "independent. Dades de línies i temps obtinguts de: www.subus.es i "
-"isaealicante.subus.es/movil\\nMés informació: alberapps.blogspot.com i al "
+"isaealicante.subus.es/movil\nMés informació: alberapps.blogspot.com i al "
 "Twitter: @alberapps"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:146
@@ -76,7 +76,7 @@ msgstr "Parada"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:158
 msgid "Load"
-msgstr "Refrecar"
+msgstr "Refrescar"
 
 #: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:172
 msgid "* Slide up to display the menu"

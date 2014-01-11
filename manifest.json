@@ -1,14 +1,14 @@
 {
-    "description": "description of TiempoBus",
+    "description": "Bus tracker Alicante Spain",
     "framework": "ubuntu-sdk-13.10",
     "hooks": {
         "TiempoBus": {
-            "apparmor": "TiempoBus.json",
-            "desktop": "TiempoBus.desktop"
+            "apparmor": "tiempobus.json",
+            "desktop": "tiempobus.desktop"
         }
     },
     "maintainer": "",
-    "name": "com.ubuntu.developer.username.TiempoBus",
-    "title": "TiempoBus",
-    "version": "0.1"
+    "name": "alberapps.ubuntusdk.tiempobus",
+    "title": "tiempobus",
+    "version": "0.3"
 }
