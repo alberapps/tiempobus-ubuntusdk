@@ -1,12 +1,11 @@
 [Desktop Entry]
-Encoding=UTF-8
-Version=0.5
 Name=TiempoBus
-Comment=My project description
+Comment=Alicante(Spain) Bus Tracker
 Exec=/usr/bin/qmlscene $@ /usr/share/tiempobus/tiempobus.qml
-Icon=/usr/share/tiempobus/ic_tiempobus_3-web.png
+#Icon=/usr/share/tiempobus/ic_tiempobus_3-web.png
+Icon=ic_tiempobus_3-web.png
 Terminal=false
 Type=Application
 X-Ubuntu-Touch=true
 X-Ubuntu-StageHint=SideStage
-X-Ubuntu-Gettext-Domain=tiempobus
+X-Ubuntu-Gettext-Domain=com.ubuntu.developer.alberapps.tiempobus

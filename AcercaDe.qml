@@ -35,7 +35,7 @@ Label {
     id: texto1
     anchors.top: imagen.bottom
     anchors.horizontalCenter: imagen.horizontalCenter
-    text: "TiempoBus 0.5"
+    text: "TiempoBus 0.5 BETA"
     fontSize: "x-large"
 }
 
@@ -46,23 +46,23 @@ Label {
     anchors.top: texto1.bottom
     anchors.horizontalCenter: texto1.horizontalCenter
 
-    text: "Alberto Montiel 2013"
+    text: "Alberto Montiel 2014"
     fontSize: "large"
 }
 
-/*
+
 Label {
-    id:texto4
+    id:texto7
     anchors.top: texto3.bottom
     anchors.horizontalCenter: texto3.horizontalCenter
 
-    text: "http://alberapps.blogspot.com"
+    text: "This is a BETA version."
     fontSize: "medium"
 }
-*/
+
 WebLink{
     id: texto4
-    anchors.top: texto3.bottom
+    anchors.top: texto7.bottom
     anchors.horizontalCenter: texto3.horizontalCenter
     label: "http://alberapps.blogspot.com"
     url: "http://alberapps.blogspot.com"

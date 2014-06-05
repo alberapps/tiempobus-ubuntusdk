@@ -34,7 +34,7 @@ MainView {
     objectName: "mainView"
 
     // Note! applicationName needs to match the .desktop filename
-    applicationName: "tiempobus"
+    applicationName: "com.ubuntu.developer.alberapps.tiempobus"
 
     /*
      This property enables the application to change orientation
@@ -52,9 +52,13 @@ MainView {
     property string paradaModificar: '';
 
 
+
     PageStack {
         id: pageStack
-        Component.onCompleted: push(paginaTiempos);
+        Component.onCompleted: {                
+                push(paginaTiempos)
+        }
+
 
 
 
