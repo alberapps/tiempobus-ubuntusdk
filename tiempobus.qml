@@ -34,7 +34,12 @@ MainView {
     objectName: "mainView"
 
     // Note! applicationName needs to match the .desktop filename
-    applicationName: "com.ubuntu.developer.alberapps.tiempobus"
+
+    //Touch
+    //applicationName: "com.ubuntu.developer.alberapps.tiempobus"
+
+    //Desktop
+    applicationName: "tiempobus"
 
     /*
      This property enables the application to change orientation
