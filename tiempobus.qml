@@ -35,10 +35,10 @@ MainView {
 
     // Note! applicationName needs to match the .desktop filename
 
-    //Touch
+    //Para paquete click - Cambiar
     //applicationName: "com.ubuntu.developer.alberapps.tiempobus"
 
-    //Desktop
+    //Desktop - Quitar para paquete click
     applicationName: "tiempobus"
 
     /*
@@ -60,8 +60,12 @@ MainView {
 
     PageStack {
         id: pageStack
-        Component.onCompleted: {                
-                push(paginaTiempos)
+        Component.onCompleted: {
+            //Para desktop Quitar para crear click
+            i18n.domain = 'tiempobus'
+            i18n.bindtextdomain("tiempobus","/usr/share/locale")
+            //Fin para desktop
+            push(paginaTiempos)
         }
 
 

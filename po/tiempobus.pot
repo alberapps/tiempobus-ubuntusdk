@@ -1,14 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# TiempoBus.
+# Copyright (C) 2013 Alberto Montiel
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Alberto Montiel <alberapps@gmail.com>, 2013.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-06 19:12+0200\n"
+"POT-Creation-Date: 2014-01-11 17:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,19 +25,28 @@ msgstr ""
 msgid "Modify"
 msgstr ""
 
-#: tiempobus.qml:73
+#: components/RemovableBGLineas.qml:32 components/RemovableBGLineas.qml:52
+#: tiempobus.qml:481
+msgid "Forward"
+msgstr ""
+
+#: components/RemovableBGLineas.qml:66 tiempobus.qml:489 tiempobus.qml:547
+msgid "Backward"
+msgstr ""
+
+#: tiempobus.qml:64
 msgid "TiempoBus"
 msgstr ""
 
-#: tiempobus.qml:97 tiempobus.qml:333
+#: tiempobus.qml:88 tiempobus.qml:324
 msgid "No information"
 msgstr ""
 
-#: tiempobus.qml:121
+#: tiempobus.qml:112
 msgid "Notice"
 msgstr ""
 
-#: tiempobus.qml:124
+#: tiempobus.qml:115
 msgid ""
 "Time offered by ISAE system, which offers, in REAL TIME, the time of arrival "
 "ESTIMATES in TAM net. These times may vary for reasons unrelated to the app, "
@@ -48,81 +57,72 @@ msgid ""
 "Learn more: alberapps.blogspot.com and at Twitter: @alberapps"
 msgstr ""
 
-#: tiempobus.qml:155
+#: tiempobus.qml:146
 msgid "Bus stop"
 msgstr ""
 
-#: tiempobus.qml:167
+#: tiempobus.qml:158
 msgid "Load"
 msgstr ""
 
-#: tiempobus.qml:181
+#: tiempobus.qml:172
 msgid "* Slide up to display the menu"
 msgstr ""
 
-#: tiempobus.qml:191 tiempobus.qml:315
+#: tiempobus.qml:182 tiempobus.qml:306
 msgid "Favorites"
 msgstr ""
 
-#: tiempobus.qml:203 tiempobus.qml:238 tiempobus.qml:292
+#: tiempobus.qml:194 tiempobus.qml:229 tiempobus.qml:283
 msgid "Save"
 msgstr ""
 
-#: tiempobus.qml:214 tiempobus.qml:443 tiempobus.qml:541
+#: tiempobus.qml:205 tiempobus.qml:434 tiempobus.qml:532
 msgid "Search"
 msgstr ""
 
-#: tiempobus.qml:222 tiempobus.qml:426
+#: tiempobus.qml:213 tiempobus.qml:417
 msgid "Settings"
 msgstr ""
 
-#: tiempobus.qml:265
+#: tiempobus.qml:256
 msgid "Label"
 msgstr ""
 
-#: tiempobus.qml:274
+#: tiempobus.qml:265
 msgid "Description"
 msgstr ""
 
-#: tiempobus.qml:414
+#: tiempobus.qml:405
 msgid ""
 "* Click to load the favorite. Slide Right to Modify. Slide left to Remove"
 msgstr ""
 
-#: tiempobus.qml:490 components/RemovableBGLineas.qml:32
-#: components/RemovableBGLineas.qml:52
-msgid "Forward"
-msgstr ""
-
-#: tiempobus.qml:498 tiempobus.qml:556 components/RemovableBGLineas.qml:66
-msgid "Backward"
-msgstr ""
-
-#: tiempobus.qml:525
+#: tiempobus.qml:516
 msgid ""
 "* Slide to the right, to Forward stops. Slide to the left to Backware stops"
 msgstr ""
 
-#: tiempobus.qml:743
+#: tiempobus.qml:734
 msgid "Bus Stop: "
 msgstr ""
 
-#: tiempobus.qml:765 tiempobus.qml:779
+#: tiempobus.qml:756 tiempobus.qml:770
 msgid "min."
 msgstr ""
 
-#: tiempobus.qml:774
+#: tiempobus.qml:765
 msgid "At bus stop"
 msgstr ""
 
-#: tiempobus.qml:779
+#: tiempobus.qml:770
 msgid "&"
 msgstr ""
 
-#: tiempobus.qml:788
+#: tiempobus.qml:779
 msgid "y"
 msgstr ""
 
-#: tiempobus.qml:788
+#: tiempobus.qml:779
 msgid "No data"
 msgstr ""
