@@ -1,14 +1,14 @@
-# TiempoBus.
-# Copyright (C) 2013 Alberto Montiel
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Alberto Montiel <alberapps@gmail.com>, 2013.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-11 17:09+0100\n"
+"POT-Creation-Date: 2014-07-08 19:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,112 +17,137 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: tiempobus.qml:110
+msgid "TiempoBus"
+msgstr ""
+
+#: tiempobus.qml:134 tiempobus.qml:998
+msgid "Bus Stop: "
+msgstr ""
+
+#: tiempobus.qml:140
+msgid "Updated at: "
+msgstr ""
+
+#: tiempobus.qml:154
+msgid "Bus stop"
+msgstr ""
+
+#: tiempobus.qml:166 tiempobus.qml:475
+msgid "Load"
+msgstr ""
+
+#: tiempobus.qml:186 tiempobus.qml:277
+msgid "No information"
+msgstr ""
+
+#: tiempobus.qml:186 tiempobus.qml:211
+msgid ""
+"This application is UNofficial and its development is independent.\n"
+"Lines and times data offered and maintained by: subus.es\n"
+"Development: alberapps.blogspot.com - twitter.com/alberapps"
+msgstr ""
+
+#: tiempobus.qml:210
+msgid "Notice"
+msgstr ""
+
+#: tiempobus.qml:229 tiempobus.qml:655 tiempobus.qml:700
+msgid "Save"
+msgstr ""
+
+#: tiempobus.qml:240 tiempobus.qml:719
+msgid "Settings"
+msgstr ""
+
+#: tiempobus.qml:257
+msgid "Favorites"
+msgstr ""
+
+#: tiempobus.qml:289 tiempobus.qml:420
+msgid "Options"
+msgstr ""
+
+#: tiempobus.qml:393
+msgid "Search"
+msgstr ""
+
+#: tiempobus.qml:431 tiempobus.qml:567 components/RemovableBGLineas.qml:32
+#: components/RemovableBGLineas.qml:52
+msgid "Forward"
+msgstr ""
+
+#: tiempobus.qml:448 tiempobus.qml:568 components/RemovableBGLineas.qml:66
+msgid "Backward"
+msgstr ""
+
+#: tiempobus.qml:544 tiempobus.qml:1268
+msgid "Select Bus Line"
+msgstr ""
+
+#: tiempobus.qml:627 tiempobus.qml:1270 tiempobus.qml:1300
+msgid "Select Bus Stop"
+msgstr ""
+
+#: tiempobus.qml:673
+msgid "Label"
+msgstr ""
+
+#: tiempobus.qml:682
+msgid "Description"
+msgstr ""
+
+#: tiempobus.qml:737
+msgid "Automatic Refresh"
+msgstr ""
+
+#: tiempobus.qml:812
+msgid "This is a BETA version."
+msgstr ""
+
+#: tiempobus.qml:828
+msgid "License GPLv3"
+msgstr ""
+
+#: tiempobus.qml:837
+msgid ""
+"TiempoBus - Informacion sobre tiempos de paso de autobuses en Alicante\n"
+"Copyright (C) 2014 Alberto Montiel\n"
+"\n"
+"This program is free software: you can redistribute it and/or modify\n"
+"it under the terms of the GNU General Public License as published by\n"
+"the Free Software Foundation, either version 3 of the License, or\n"
+"(at your option) any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program.  If not, see <http://www.gnu.org/licenses/>."
+msgstr ""
+
+#: tiempobus.qml:1026 tiempobus.qml:1040
+msgid "min"
+msgstr ""
+
+#: tiempobus.qml:1035
+msgid "At bus stop"
+msgstr ""
+
+#: tiempobus.qml:1040 tiempobus.qml:1049
+msgid "and"
+msgstr ""
+
+#: tiempobus.qml:1049
+msgid "No data"
+msgstr ""
+
 #: components/RemovableBG.qml:32 components/RemovableBG.qml:66
 msgid "Delete"
 msgstr ""
 
 #: components/RemovableBG.qml:52
 msgid "Modify"
-msgstr ""
-
-#: components/RemovableBGLineas.qml:32 components/RemovableBGLineas.qml:52
-#: tiempobus.qml:481
-msgid "Forward"
-msgstr ""
-
-#: components/RemovableBGLineas.qml:66 tiempobus.qml:489 tiempobus.qml:547
-msgid "Backward"
-msgstr ""
-
-#: tiempobus.qml:64
-msgid "TiempoBus"
-msgstr ""
-
-#: tiempobus.qml:88 tiempobus.qml:324
-msgid "No information"
-msgstr ""
-
-#: tiempobus.qml:112
-msgid "Notice"
-msgstr ""
-
-#: tiempobus.qml:115
-msgid ""
-"Time offered by ISAE system, which offers, in REAL TIME, the time of arrival "
-"ESTIMATES in TAM net. These times may vary for reasons unrelated to the app, "
-"as traffic, route changes, etc. Features using the local database may not "
-"show the latest route changes. This application is UNofficial and its "
-"development is independent. Line data and step times obtained from: www."
-"subus.es and isaealicante.subus.es/movil/index.aspx\n"
-"Learn more: alberapps.blogspot.com and at Twitter: @alberapps"
-msgstr ""
-
-#: tiempobus.qml:146
-msgid "Bus stop"
-msgstr ""
-
-#: tiempobus.qml:158
-msgid "Load"
-msgstr ""
-
-#: tiempobus.qml:172
-msgid "* Slide up to display the menu"
-msgstr ""
-
-#: tiempobus.qml:182 tiempobus.qml:306
-msgid "Favorites"
-msgstr ""
-
-#: tiempobus.qml:194 tiempobus.qml:229 tiempobus.qml:283
-msgid "Save"
-msgstr ""
-
-#: tiempobus.qml:205 tiempobus.qml:434 tiempobus.qml:532
-msgid "Search"
-msgstr ""
-
-#: tiempobus.qml:213 tiempobus.qml:417
-msgid "Settings"
-msgstr ""
-
-#: tiempobus.qml:256
-msgid "Label"
-msgstr ""
-
-#: tiempobus.qml:265
-msgid "Description"
-msgstr ""
-
-#: tiempobus.qml:405
-msgid ""
-"* Click to load the favorite. Slide Right to Modify. Slide left to Remove"
-msgstr ""
-
-#: tiempobus.qml:516
-msgid ""
-"* Slide to the right, to Forward stops. Slide to the left to Backware stops"
-msgstr ""
-
-#: tiempobus.qml:734
-msgid "Bus Stop: "
-msgstr ""
-
-#: tiempobus.qml:756 tiempobus.qml:770
-msgid "min."
-msgstr ""
-
-#: tiempobus.qml:765
-msgid "At bus stop"
-msgstr ""
-
-#: tiempobus.qml:770
-msgid "&"
-msgstr ""
-
-#: tiempobus.qml:779
-msgid "y"
-msgstr ""
-
-#: tiempobus.qml:779
-msgid "No data"
 msgstr ""
