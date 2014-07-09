@@ -1,151 +1,199 @@
 # Catalan translation for tiempobus
-# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# opyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the tiempobus package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+# Alberto Montiel <alberapps@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tiempobus\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-08-27 18:53+0200\n"
-"PO-Revision-Date: 2013-08-27 17:40+0000\n"
+"Report-Msgid-Bugs-To: Alberto Montiel <alberapps@gmail.com>\n"
+"POT-Creation-Date: 2014-07-08 19:50+0200\n"
+"PO-Revision-Date: 2014-07-08 22:16+0200\n"
 "Last-Translator: Alberto Montiel <alberapps@gmail.com>\n"
-"Language-Team: Catalan <ca@li.org>\n"
+"Language-Team: espanyol; castellà <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-08-27 17:48+0000\n"
-"X-Generator: Launchpad (build 16738)\n"
+"X-Launchpad-Export-Date: 2014-07-08 19:16+0000\n"
+"X-Generator: Gtranslator 2.91.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBG.qml:32
-#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBG.qml:66
-msgid "Delete"
-msgstr "Elimina"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBG.qml:52
-msgid "Modify"
-msgstr "Modifica"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBGLineas.qml:32
-#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBGLineas.qml:52
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:481
-msgid "Forward"
-msgstr "Anar"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/components/RemovableBGLineas.qml:66
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:489
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:547
-msgid "Backward"
-msgstr "Tornar"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:64
+#: tiempobus.qml:110
 msgid "TiempoBus"
-msgstr "TiempoBus"
+msgstr "TempsBus"
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:88
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:324
-msgid "No information"
-msgstr "Sense informació"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:112
-msgid "Notice"
-msgstr "Avís"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:115
-msgid ""
-"Time offered by ISAE system, which offers, in REAL TIME, the time of arrival "
-"ESTIMATES in TAM net. These times may vary for reasons unrelated to the app, "
-"as traffic, route changes, etc. Features using the local database may not "
-"show the latest route changes. This application is UNofficial and its "
-"development is independent. Line data and step times obtained from: "
-"www.subus.es and isaealicante.subus.es/movil/index.aspx\n"
-"Learn more: alberapps.blogspot.com and at Twitter: @alberapps"
-msgstr ""
-"Temps obtinguts del sistema ISAE, que oferix, en TEMPS REAL, la ESTIMACIÓ de "
-"temps de pas de la xarxa TAM. Els temps poden variar per raons alienes a l"
-"'aplicació, com el trànsit, canvis de recorregut, etc. Les funcions que "
-"utilitzen la base de dades local, poden no disposar dels últims canvis en "
-"els recorreguts. Esta aplicació NO és oficial i es desenvolupa de forma "
-"independent. Dades de línies i temps obtinguts de: www.subus.es i "
-"isaealicante.subus.es/movil\nMés informació: alberapps.blogspot.com i al "
-"Twitter: @alberapps"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:146
-msgid "Bus stop"
-msgstr "Parada"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:158
-msgid "Load"
-msgstr "Refrescar"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:172
-msgid "* Slide up to display the menu"
-msgstr "* Lliscar cap amunt per desplegar el menú"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:182
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:306
-msgid "Favorites"
-msgstr "Favorits"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:194
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:229
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:283
-msgid "Save"
-msgstr "Guardar"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:205
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:434
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:532
-msgid "Search"
-msgstr "Cercar"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:213
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:417
-msgid "Settings"
-msgstr "Preferències"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:256
-msgid "Label"
-msgstr "Etiqueta"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:265
-msgid "Description"
-msgstr "Descripció"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:405
-msgid ""
-"* Click to load the favorite. Slide Right to Modify. Slide left to Remove"
-msgstr ""
-"* Click per carregar el favorit. Lliscar a la dreta per modificar, a la "
-"dreta per esborrar"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:516
-msgid ""
-"* Slide to the right, to Forward stops. Slide to the left to Backware stops"
-msgstr ""
-"Lliscar a la dreta per a les parades d'anada ia l'esquerra per les de tornada"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:734
+#: tiempobus.qml:134 tiempobus.qml:998
 msgid "Bus Stop: "
 msgstr "Parada: "
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:756
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:770
-msgid "min."
-msgstr "min."
+#: tiempobus.qml:140
+msgid "Updated at: "
+msgstr "Actualitzat a les "
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:765
+#: tiempobus.qml:154
+msgid "Bus stop"
+msgstr "Parada"
+
+#: tiempobus.qml:166 tiempobus.qml:475
+msgid "Load"
+msgstr "Carregar"
+
+#: tiempobus.qml:186 tiempobus.qml:277
+msgid "No information"
+msgstr "Sense informació"
+
+#: tiempobus.qml:186 tiempobus.qml:211
+msgid ""
+"This application is UNofficial and its development is independent.\n"
+"Lines and times data offered and maintained by: subus.es\n"
+"Development: alberapps.blogspot.com - twitter.com/alberapps"
+msgstr "Esta aplicació NO és oficial i es desenvolupa de forma independent.\n"
+"Dades de línies i temps oferits i mantinguts per: subus.es\n"
+"Desenvolupament: alberapps.blogspot.com - twitter.com/alberapps"
+
+#: tiempobus.qml:210
+msgid "Notice"
+msgstr "Avís"
+
+#: tiempobus.qml:229 tiempobus.qml:655 tiempobus.qml:700
+msgid "Save"
+msgstr "Guardar"
+
+#: tiempobus.qml:240 tiempobus.qml:719
+msgid "Settings"
+msgstr "Preferències"
+
+#: tiempobus.qml:257
+msgid "Favorites"
+msgstr "Favorits"
+
+#: tiempobus.qml:289 tiempobus.qml:420
+msgid "Options"
+msgstr "Opcions"
+
+#: tiempobus.qml:393
+msgid "Search"
+msgstr "Cercar"
+
+#: tiempobus.qml:431 tiempobus.qml:567 components/RemovableBGLineas.qml:32
+#: components/RemovableBGLineas.qml:52
+msgid "Forward"
+msgstr "Anar"
+
+#: tiempobus.qml:448 tiempobus.qml:568 components/RemovableBGLineas.qml:66
+msgid "Backward"
+msgstr "Tornar"
+
+#: tiempobus.qml:544 tiempobus.qml:1268
+msgid "Select Bus Line"
+msgstr "Selecciona Línia"
+
+#: tiempobus.qml:627 tiempobus.qml:1270 tiempobus.qml:1300
+msgid "Select Bus Stop"
+msgstr "Selecciona Parada"
+
+#: tiempobus.qml:673
+msgid "Label"
+msgstr "Etiqueta"
+
+#: tiempobus.qml:682
+msgid "Description"
+msgstr "Descripció"
+
+#: tiempobus.qml:737
+msgid "Automatic Refresh"
+msgstr "Recàrrega Automàtica"
+
+#: tiempobus.qml:812
+msgid "This is a BETA version."
+msgstr "Esta és una versió BETA"
+
+#: tiempobus.qml:828
+msgid "License GPLv3"
+msgstr "llicència GPLv3"
+
+#: tiempobus.qml:837
+msgid ""
+"TiempoBus - Informacion sobre tiempos de paso de autobuses en Alicante\n"
+"Copyright (C) 2014 Alberto Montiel\n"
+"\n"
+"This program is free software: you can redistribute it and/or modify\n"
+"it under the terms of the GNU General Public License as published by\n"
+"the Free Software Foundation, either version 3 of the License, or\n"
+"(at your option) any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program.  If not, see <http://www.gnu.org/licenses/>."
+msgstr ""
+
+#: tiempobus.qml:1026 tiempobus.qml:1040
+msgid "min"
+msgstr ""
+
+#: tiempobus.qml:1035
 msgid "At bus stop"
 msgstr "A la parada"
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:770
-msgid "&"
+#: tiempobus.qml:1040 tiempobus.qml:1049
+msgid "and"
 msgstr "i"
 
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:779
-msgid "y"
-msgstr "i"
-
-#: /home/albert/UbuntuSDK/git/tiempobus/tiempobus.qml:779
+#: tiempobus.qml:1049
 msgid "No data"
 msgstr "Sense Informació"
+
+#: components/RemovableBG.qml:32 components/RemovableBG.qml:66
+msgid "Delete"
+msgstr "Elimina"
+
+#: components/RemovableBG.qml:52
+msgid "Modify"
+msgstr "Modifica"
+
+#~ msgid "y"
+#~ msgstr "i"
+
+#~ msgid "min."
+#~ msgstr "min."
+
+#~ msgid "&"
+#~ msgstr "i"
+
+#~ msgid ""
+#~ "* Slide to the right, to Forward stops. Slide to the left to Backware "
+#~ "stops"
+#~ msgstr ""
+#~ "Lliscar a la dreta per a les parades d'anada ia l'esquerra per les de "
+#~ "tornada"
+
+#~ msgid "* Slide up to display the menu"
+#~ msgstr "* Lliscar cap amunt per desplegar el menú"
+
+#~ msgid ""
+#~ "* Click to load the favorite. Slide Right to Modify. Slide left to Remove"
+#~ msgstr ""
+#~ "* Click per carregar el favorit. Lliscar a la dreta per modificar, a la "
+#~ "dreta per esborrar"
+
+#~ msgid ""
+#~ "Time offered by ISAE system, which offers, in REAL TIME, the time of "
+#~ "arrival ESTIMATES in TAM net. These times may vary for reasons unrelated "
+#~ "to the app, as traffic, route changes, etc. Features using the local "
+#~ "database may not show the latest route changes. This application is "
+#~ "UNofficial and its development is independent. Line data and step times "
+#~ "obtained from: www.subus.es and isaealicante.subus.es/movil/index.aspx\n"
+#~ "Learn more: alberapps.blogspot.com and at Twitter: @alberapps"
+#~ msgstr ""
+#~ "Temps obtinguts del sistema ISAE, que oferix, en TEMPS REAL, la ESTIMACIÓ "
+#~ "de temps de pas de la xarxa TAM. Els temps poden variar per raons alienes "
+#~ "a l'aplicació, com el trànsit, canvis de recorregut, etc. Les funcions "
+#~ "que utilitzen la base de dades local, poden no disposar dels últims "
+#~ "canvis en els recorreguts. Esta aplicació NO és oficial i es desenvolupa "
+#~ "de forma independent. Dades de línies i temps obtinguts de: www.subus.es "
+#~ "i isaealicante.subus.es/movil\n"
+#~ "Més informació: alberapps.blogspot.com i al Twitter: @alberapps"

@@ -16,7 +16,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import QtQuick 2.1
+import QtQuick 2.0
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
 import Ubuntu.Components 1.1 as Toolkit
@@ -34,20 +34,20 @@ MainView {
 
     // Note! applicationName needs to match the .desktop filename
 
-    //Para paquete click - Cambiar
-    //applicationName: "com.ubuntu.developer.alberapps.tiempobus"
+    /////Para paquete click - Cambiar
+    applicationName: "com.ubuntu.developer.alberapps.tiempobus"
 
     //Desktop - Quitar para paquete click
-    applicationName: "tiempobus"
+    //applicationName: "tiempobus"
 
     /*
      This property enables the application to change orientation
      when the device is rotated. The default is false.
     */
-    //automaticOrientation: true
+    automaticOrientation: true
 
     width: units.gu(100)
-    height: units.gu(75)
+    height: units.gu(80)
 
     property string paradaActual: '4450';
 
@@ -81,8 +81,8 @@ MainView {
 
             Component.onCompleted: {
                 //Para desktop Quitar para crear click
-                i18n.domain = 'tiempobus'
-                i18n.bindtextdomain("tiempobus","/usr/share/locale")
+                //i18n.domain = 'tiempobus'
+                //i18n.bindtextdomain("tiempobus","/usr/share/locale")
                 //Fin para desktop
                 push(tabs)
             }
@@ -153,11 +153,18 @@ MainView {
                             id: entradaParada
                             placeholderText: i18n.tr("Bus stop")
 
+                            maximumLength: 4
+                            width: units.gu(8)
+
+
                             anchors.left: hora.right
                             anchors.leftMargin: units.gu(2)
 
                             validator: IntValidator{bottom: 1; top: 5000;}
                             focus: true
+
+
+
 
                         }
 
@@ -174,18 +181,45 @@ MainView {
 
                     }
 
+
+                    Row {
+
+
+                            Label {
+                                id: listadoVacio
+                                anchors.centerIn: parent
+                                text: ">>" + i18n.tr("No information") +"\n" + i18n.tr("Check the Bus Timetable") + "\n\n" + i18n.tr("This application is UNofficial and its development is independent.\nLines and times data offered and maintained by: subus.es\nDevelopment: alberapps.blogspot.com - twitter.com/alberapps")
+                                fontSize: "small"
+                                width: parent.width
+                                //anchors.margins: units.gu(100)
+                                wrapMode: "Wrap"
+                                visible: false
+
+                            }
+
+
+                        anchors.fill: parent
+
+                        //Cuando no hay datos a mostrar
+                        /*Label {
+                            id: listadoVacio
+                            anchors.centerIn: parent
+
+                            text: i18n.tr("No information") + "\n" + i18n.tr("This application is UNofficial and its development is independent. Lines and times data offered and maintained by: subus.esDevelopment: alberapps.blogspot.com - twitter.com/alberapps")
+                            visible: false
+
+
+
+                        }*/
+
+                    }
+
                     //Listado de tiempos
                     Row {
                             anchors.fill: parent
                             anchors.topMargin: units.gu(5)
 
-                            //Cuando no hay datos a mostrar
-                            Label {
-                                id: listadoVacio
-                                anchors.centerIn: parent
-                                text: i18n.tr("No information") + "\n" + i18n.tr("This application is UNofficial and its development is independent.\nLines and times data offered and maintained by: subus.es\nDevelopment: alberapps.blogspot.com - twitter.com/alberapps")
-                                visible: false
-                            }
+
 
 
                             //Listado
@@ -255,12 +289,22 @@ MainView {
         Tab {
             id: tabFavoritos
             title: i18n.tr("Favorites")
+            onVisibleChanged: {
+
+                if(tabFavoritos.visible){
+                    cargarFavoritos();
+                }
+
+
+            }
 
             //Listado de favoritos
             page: Page {
 
                 id: paginaFavoritos
-                Component.onCompleted: cargarFavoritos();
+                //Component.onCompleted: cargarFavoritos();
+
+
 
                 Column {
 
@@ -282,70 +326,68 @@ MainView {
                     Component {
                         id: dialogFavorito
 
-                        Dialog {
+                        //Opciones al seleccionar el favorito
+
+                        ActionSelectionPopover {
                             id: dialogue
-
-
-                            title: i18n.tr("Options")
-                            //text: "Are you sure you want to delete this file?"
-
-                            Button {
-                                text: "Load"
-                                gradient: UbuntuColors.greyGradient
-                                onClicked: {
-                                    PopupUtils.close(dialogue);
-
-                                    var favoritoParada = favoritosList.get(paradaIndex).parada;
-                                    paradaActual = favoritoParada;
-
-                                    entradaParada.text = paradaActual;
-                                    paradaSeleccionada();
-
-                                    //Tab principal
-                                    tabs.selectedTabIndex = 0;
-
-                                }
+                            delegate: ListItem.Standard {
+                              text: action.text
 
                             }
-                            Button {
-                                text: "Modify"
-                                onClicked: {
+                            actions: ActionList {
+                              Action {
+                                  text: i18n.tr("Load")
+                                  onTriggered: {
+                                      PopupUtils.close(dialogue);
 
-                                    PopupUtils.close(dialogue);
+                                      var favoritoParada = favoritosList.get(paradaIndex).parada;
+                                      paradaActual = favoritoParada;
 
-                                    inputTitulo.text = favoritosList.get(paradaIndex).titulo;
-                                    inputDescripcion.text = favoritosList.get(paradaIndex).descripcion;
+                                      entradaParada.text = paradaActual;
+                                      paradaSeleccionada();
 
-                                    modificarFavorito = favoritosList.get(paradaIndex).rowid;
-                                    paradaModificar = favoritosList.get(paradaIndex).parada;
+                                      //Tab principal
+                                      tabs.selectedTabIndex = 0;
+                                  }
+                              }
+                              Action {
+                                  text: i18n.tr("Modify")
+                                  onTriggered: {
 
-                                    pageStack.push(formGuardar);
+                                      PopupUtils.close(dialogue);
 
-                                    //Devuelve a la lista
-                                    favoritosList.append({"parada": favoritosList.get(paradaIndex).parada, "titulo": favoritosList.get(paradaIndex).titulo, "descripcion": favoritosList.get(paradaIndex).descripcion, "rowid": favoritosList.get(paradaIndex).rowid});
+                                      inputTitulo.text = favoritosList.get(paradaIndex).titulo;
+                                      inputDescripcion.text = favoritosList.get(paradaIndex).descripcion;
 
-                                }
+                                      modificarFavorito = favoritosList.get(paradaIndex).rowid;
+                                      paradaModificar = favoritosList.get(paradaIndex).parada;
 
-                            }
-                            Button {
-                                text: "Delete"
-                                onClicked: {
-                                    PopupUtils.close(dialogue);
+                                      pageStack.push(formGuardar);
 
-                                     var favoritoId = favoritosList.get(paradaIndex).rowid;
+                                      //Devuelve a la lista
+                                      favoritosList.append({"parada": favoritosList.get(paradaIndex).parada, "titulo": favoritosList.get(paradaIndex).titulo, "descripcion": favoritosList.get(paradaIndex).descripcion, "rowid": favoritosList.get(paradaIndex).rowid});
 
-                                    borrarFavorito(favoritoId);
+                                  }
+                              }
+                              Action {
+                                  text: i18n.tr("Delete")
+                                  onTriggered: {
+                                      PopupUtils.close(dialogue);
 
-                                    cargarFavoritos();
+                                       var favoritoId = favoritosList.get(paradaIndex).rowid;
+
+                                      borrarFavorito(favoritoId);
+
+                                      cargarFavoritos();
 
 
-                                }
-                            }
-                            Button {
-                                text: "Cancel"
-                                onClicked: PopupUtils.close(dialogue)
+                                  }
+                              }
                             }
                         }
+
+
+
                     }
 
 
@@ -732,113 +774,107 @@ MainView {
         }
 
 
-        ListItem.Standard {
-            id: listadoPreferencias
-                text: i18n.tr("Automatic Refresh")
-                control: Toolkit.Switch {
-                    id: confCargaAuto
-                    anchors.verticalCenter: parent.verticalCenter
 
-                    onClicked: {
-                        console.log('PREFERENCIAS CAMBIADA: ' + confCargaAuto.checked);
 
-                        var temp = preferencias;
 
-                        if(confCargaAuto.checked){
-                            temp.cargaAutomatica = 'true';
-                            console.log('OK');
-                        }else{
-                            temp.cargaAutomatica = 'false';
-                            console.log('NOOK');
+
+        Flickable{
+
+            //anchors.top: texto5.bottom
+
+            id:flick
+
+            flickableDirection: Flickable.VerticalFlick
+            anchors.fill: parent
+            contentWidth: parent.width
+            contentHeight: parent.height
+
+
+            ListItem.Standard {
+                id: listadoPreferencias
+                    text: i18n.tr("Automatic Refresh")
+                    control: Toolkit.Switch {
+                        id: confCargaAuto
+                        anchors.verticalCenter: parent.verticalCenter
+
+                        onClicked: {
+                            console.log('PREFERENCIAS CAMBIADA: ' + confCargaAuto.checked);
+
+                            var temp = preferencias;
+
+                            if(confCargaAuto.checked){
+                                temp.cargaAutomatica = 'true';
+                                console.log('OK');
+                            }else{
+                                temp.cargaAutomatica = 'false';
+                                console.log('NOOK');
+                            }
+
+                            preferencias = temp;
+
+                            guardarPreferencias();
+
                         }
-
-                        preferencias = temp;
-
-                        guardarPreferencias();
-
                     }
                 }
+
+        Column {
+            id:listadoLabel
+            anchors.top: listadoPreferencias.bottom
+            spacing: units.gu(0.5)
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            Image {
+                id: imagen
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                source: Qt.resolvedUrl("ic_tiempobus_3-web.png")
+                width: units.gu(10)
+                height: units.gu(10)
+
+            }
+
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "TiempoBus 0.7 BETA"
+                fontSize: "x-large"
+            }
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "Alberto Montiel 2014"
+                fontSize: "large"
+            }
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: i18n.tr("This is a BETA version.")
+                fontSize: "medium"
+            }
+
+            WebLink{
+                anchors.horizontalCenter: parent.horizontalCenter
+                id: texto4
+                label: "http://alberapps.blogspot.com"
+                url: "http://alberapps.blogspot.com"
+            }
+
+            WebLink{
+                anchors.horizontalCenter: parent.horizontalCenter
+                id: texto5
+                label: i18n.tr("License GPLv3")
+                url: "http://www.gnu.org/licenses/gpl.html"
             }
 
 
 
-        /*Loader{
+            Label {
 
-            anchors.horizontalCenter: parent
-            anchors.top: parent
-            source:"AcercaDe.qml"
-        }*/
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "\n\n" + i18n.tr("TiempoBus - Informacion sobre tiempos de paso de autobuses en Alicante\nCopyright (C) 2014 Alberto Montiel\n\nThis program is free software: you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program.  If not, see <http://www.gnu.org/licenses/>.")
+                fontSize: "x-small"
+                //wrapMode: Label.Wrap
+                //width: parent.width - units.gu(20)
 
-
-        Item{
-
-            anchors.top: listadoPreferencias.bottom
-            anchors.horizontalCenter: parent.horizontalCenter
-
-        Image {
-            id: imagen
-             anchors.horizontalCenter: parent.horizontalCenter
-            source: Qt.resolvedUrl("ic_tiempobus_3-web.png")
-            width: units.gu(10)
-            height: units.gu(10)
-
-        }
-
-        Label {
-            id: texto1
-            anchors.top: imagen.bottom
-            anchors.horizontalCenter: imagen.horizontalCenter
-            text: "TiempoBus 0.5 BETA"
-            fontSize: "x-large"
-        }
-
-
-
-        Label {
-            id:texto3
-            anchors.top: texto1.bottom
-            anchors.horizontalCenter: texto1.horizontalCenter
-
-            text: "Alberto Montiel 2014"
-            fontSize: "large"
-        }
-
-
-        Label {
-            id:texto7
-            anchors.top: texto3.bottom
-            anchors.horizontalCenter: texto3.horizontalCenter
-
-            text: i18n.tr("This is a BETA version.")
-            fontSize: "medium"
-        }
-
-        WebLink{
-            id: texto4
-            anchors.top: texto7.bottom
-            anchors.horizontalCenter: texto3.horizontalCenter
-            label: "http://alberapps.blogspot.com"
-            url: "http://alberapps.blogspot.com"
-        }
-
-        WebLink{
-            id: texto5
-            anchors.top: texto4.bottom
-            anchors.horizontalCenter: texto4.horizontalCenter
-            label: i18n.tr("License GPLv3")
-            url: "http://www.gnu.org/licenses/gpl.html"
-        }
-
-        Label {
-            id:texto8
-            anchors.top: texto5.bottom
-            anchors.horizontalCenter: texto3.horizontalCenter
-
-            text: i18n.tr("TiempoBus - Informacion sobre tiempos de paso de autobuses en Alicante\nCopyright (C) 2014 Alberto Montiel\n\nThis program is free software: you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program.  If not, see <http://www.gnu.org/licenses/>.")
-            fontSize: "small"
-        }
-
-
+            }
 
         }
 
@@ -849,6 +885,19 @@ MainView {
 
 
 
+
+
+
+
+    }
+
+
+
+       /* Scrollbar {
+                flickableItem: flick
+                align: Qt.AlignTrailing
+            }
+*/
 
     }
 
@@ -1046,7 +1095,7 @@ function formatearTiempos(minutos1, minutos2){
         dato+= " (" + Qt.formatTime(dateTime2,"hh:mm") + ")"
 
     }else{
-        dato+= i18n.tr("and") + " " + i18n.tr("No data")
+        dato+= " " + i18n.tr("and") + " " + i18n.tr("No data")
     }
 
 
@@ -1592,5 +1641,4 @@ function cargarPreferencias(){
 
 
 }
-
 
