@@ -35,16 +35,16 @@ MainView {
     // Note! applicationName needs to match the .desktop filename
 
     /////Para paquete click - Cambiar
-    applicationName: "com.ubuntu.developer.alberapps.tiempobus"
+    //applicationName: "com.ubuntu.developer.alberapps.tiempobus"
 
     //Desktop - Quitar para paquete click
-    //applicationName: "tiempobus"
+    applicationName: "tiempobus"
 
     /*
      This property enables the application to change orientation
      when the device is rotated. The default is false.
     */
-    automaticOrientation: true
+    //automaticOrientation: true
 
     width: units.gu(100)
     height: units.gu(80)
@@ -81,8 +81,8 @@ MainView {
 
             Component.onCompleted: {
                 //Para desktop Quitar para crear click
-                //i18n.domain = 'tiempobus'
-                //i18n.bindtextdomain("tiempobus","/usr/share/locale")
+                i18n.domain = 'tiempobus'
+                i18n.bindtextdomain("tiempobus","/usr/share/locale")
                 //Fin para desktop
                 push(tabs)
             }
