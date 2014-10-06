@@ -1,15 +1,15 @@
 {
-    "name": "com.ubuntu.developer.alberapps.tiempobus",
-    "description": "Alicante(Spain) Bus Tracker",
-    "framework": "ubuntu-sdk-14.04-qml-dev1",
     "architecture": "all",
-    "title": "TiempoBus",
+    "description": "Alicante(Spain) Bus Tracker",
+    "framework": "ubuntu-sdk-14.10-dev2",
     "hooks": {
-        "tiempobus": {
-            "apparmor": "tiempobus.json",
-            "desktop": "tiempobus.desktop"
+        "TiempoBus": {
+            "apparmor": "TiempoBus.apparmor",
+            "desktop": "TiempoBus.desktop"
         }
     },
-    "version": "0.7",
-    "maintainer": "Alberto Montiel <alberapps@gmail.com>"
+    "maintainer": "Alberto Montiel <alberapps@gmail.com>",
+    "name": "com.ubuntu.developer.alberapps.tiempobus",
+    "title": "TiempoBus",
+    "version": "0.8"
 }

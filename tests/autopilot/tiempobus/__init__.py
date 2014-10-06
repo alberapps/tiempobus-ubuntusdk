@@ -129,3 +129,4 @@ class UbuntuTouchAppTestCase(AutopilotTestCase):
         """Type a single key with keyboard"""
 
         self.keyboard.key(key)
+

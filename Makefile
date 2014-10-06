@@ -15,7 +15,8 @@ autopilot:
 	tests/autopilot/run
 
 check:
-        #qmltestrunner -input tests/unit
+	qmltestrunner -input tests/unit
 
 run:
 	/usr/bin/qmlscene $@ tiempobus.qml
+
