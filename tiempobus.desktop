@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=TiempoBus
+Comment=Alicante(Spain) Bus Tracker
+
+#Desktop
+Exec=/usr/bin/qmlscene $@ /usr/share/tiempobus/main.qml
+Icon=/usr/share/tiempobus/tiempobus.png
+X-Ubuntu-Gettext-Domain=tiempobus
+
+#Click
+#Exec=qmlscene $@ main.qml
+#Icon=tiempobus.png
+#X-Ubuntu-Gettext-Domain=com.ubuntu.developer.alberapps.tiempobus
+
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
+#X-Ubuntu-StageHint=SideStage

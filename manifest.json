@@ -1,11 +1,11 @@
 {
     "architecture": "all",
     "description": "Alicante(Spain) Bus Tracker",
-    "framework": "ubuntu-sdk-14.10-dev2",
+    "framework": "ubuntu-sdk-14.10",
     "hooks": {
         "TiempoBus": {
-            "apparmor": "TiempoBus.apparmor",
-            "desktop": "TiempoBus.desktop"
+            "apparmor": "tiempobus.apparmor",
+            "desktop": "tiempobus.desktop"
         }
     },
     "maintainer": "Alberto Montiel <alberapps@gmail.com>",

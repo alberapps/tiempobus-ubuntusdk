@@ -16,9 +16,11 @@
 *  You should have received a copy of the GNU General Public License
 *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import QtQuick 2.0
+import QtQuick 2.2
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
+import QtQuick.LocalStorage 2.0
+import Ubuntu.Components.Popups 1.0
 
 import "../components"
 
@@ -73,8 +75,12 @@ Tab {
                     id: shape1
                     objectName: "ubuntushape_sizes_15_6"
                     color: Theme.palette.normal.foreground
-                    width: tituloParada.width + hora1.width + hora.width
-                    height: units.gu(5)
+                    //width: tituloParada.width + hora1.width + hora.width
+                    width: units.gu(45)
+                    height: tituloParada.height + hora1.height
+
+
+
 
                     //anchors.verticalCenter: parent.verticalCenter
                     Label {
@@ -123,6 +129,9 @@ Tab {
                     }
                     focus: true
                 }
+
+
+
             }
 
             Row {
@@ -191,7 +200,7 @@ Tab {
             ToolbarButton {
                 action: Action {
                     text: i18n.tr("Save")
-                    iconName: "favorite-unselected"
+                    iconName: "bookmark-new"
                     onTriggered: {
                         modificarFavorito = ''
                         paradaModificar = paradaActual
@@ -281,7 +290,6 @@ Tab {
 
         var parada = entradaParada.text
 
-        tituloParada.text = i18n.tr("Bus Stop: ") + parada
 
         cargarTiempos(parada)
 
@@ -289,11 +297,28 @@ Tab {
 
         paradaActual = entradaParada.text
 
+
         //Guardar en preferencias
         //console.log('PREFERENCIAS A GUARDAR: ' + paradaActual);
         //preferencias.paradaInicial = paradaActual;
         guardarPreferencias()
-        console.log('PREFERENCIAS SELECCIONADA: ' + preferencias.paradaInicial)
+        //console.log('PREFERENCIAS SELECCIONADA: ' + preferencias.paradaInicial)
+
+
+        var datos = cargarDatosParada(parada, false);
+
+        if(datos !== null){
+
+            tituloParada.text = parada + '\n' +datos.direccion + '\nT: ' + datos.conexion;
+
+        }else{
+
+            tituloParada.text = i18n.tr("Bus Stop: ") + parada
+
+        }
+
+
+
     }
 
     /*
@@ -426,4 +451,126 @@ Tab {
 
         doc.send(sr)
     }
+
+
+
+
+
+    /** FUNCIONES BASE DE DATOS LINEAS
+      */
+    //Cargar datos de la parada
+    function cargarDatosParada(parada){
+
+        var db = LocalStorage.openDatabaseSync("TiempoBusInfoLineasDB", "1.0", "Base de datos de favoritos", 1000000);
+
+        var datosParada;
+
+        db.transaction(
+                    function(tx) {
+
+
+                        console.debug('consulta parada: ' + parada);
+
+                        var control = true;
+
+
+                            try{
+
+                                var rs2 = tx.executeSql('SELECT ROWID,* FROM LINEAS');
+
+
+                                if(rs2.rows.length > 0 ){
+
+                                    control = true;
+
+                                }else{
+                                     control = false;
+
+                                    tituloParada.text = 'Actualizando Base de Datos';
+
+                                    //cargarDatosLineas(parada);
+
+                                    PopupUtils.open(dialogoActualizacion);
+
+                                }
+
+
+                            }catch(error){
+
+                                control = false;
+
+                                //Iniciar recarga de la base de datos
+
+                                //PopupUtils.open(dialogoActualizacion);
+                                console.error('no hay tabla: ' + error);
+
+                                tituloParada.text = 'Actualizando Base de Datos';
+
+                                //cargarDatosLineas(parada);
+
+                                PopupUtils.open(dialogoActualizacion);
+
+
+                            }
+
+
+
+                        //Si todo correcto
+                        if(control){
+
+                            // Preferencia parada inicial
+                            var rs = tx.executeSql('SELECT ROWID,* FROM LINEAS WHERE PARADA = \'' + parada + '\'');
+
+                            console.debug("resultados: " + rs.rows.length);
+
+
+
+                            if(rs.rows.length > 0 ){
+
+                                datosParada = {"numLinea": rs.rows.item(0).LINEA_NUM, "lineasDesc": rs.rows.item(0).LINEA_DESC, "destino": rs.rows.item(0).DESTINO, "parada": rs.rows.item(0).PARADA, "coordenadas": rs.rows.item(0).COORDENADAS, "direccion": rs.rows.item(0).DIRECCION, "conexion": rs.rows.item(0).CONEXION, "observaciones": rs.rows.item(0).OBSERVACIONES}
+
+                            }else{
+
+                                datosParada = {"numLinea": '', "lineasDesc": ''}
+
+                            }
+
+
+
+                        }
+
+
+
+
+                    }
+                    )
+
+
+
+        //console.debug("datos parada: " + datosParada.direccion);
+
+
+        return datosParada;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-08 19:50+0200\n"
+"POT-Creation-Date: 2015-02-06 21:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,102 +17,114 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tiempobus.qml:110
+#: ui/Tiempos.qml:29
 msgid "TiempoBus"
 msgstr ""
 
-#: tiempobus.qml:134 tiempobus.qml:998
+#: ui/Tiempos.qml:88 ui/Tiempos.qml:316
 msgid "Bus Stop: "
 msgstr ""
 
-#: tiempobus.qml:140
+#: ui/Tiempos.qml:95
 msgid "Updated at: "
 msgstr ""
 
-#: tiempobus.qml:154
-msgid "Bus stop"
-msgstr ""
-
-#: tiempobus.qml:166 tiempobus.qml:475
+#: ui/Tiempos.qml:115 components/MapaItem.qml:70 ui/Favoritos.qml:68
+#: ui/Buscador.qml:121
 msgid "Load"
 msgstr ""
 
-#: tiempobus.qml:186 tiempobus.qml:277
+#: ui/Tiempos.qml:121
+msgid "Bus stop"
+msgstr ""
+
+#: ui/Tiempos.qml:144 ui/Favoritos.qml:52
 msgid "No information"
 msgstr ""
 
-#: tiempobus.qml:186 tiempobus.qml:211
+#: ui/Tiempos.qml:145
+msgid "Check the Bus Timetable"
+msgstr ""
+
+#: ui/Tiempos.qml:146 ui/Tiempos.qml:191
 msgid ""
 "This application is UNofficial and its development is independent.\n"
 "Lines and times data offered and maintained by: subus.es\n"
 "Development: alberapps.blogspot.com - twitter.com/alberapps"
 msgstr ""
 
-#: tiempobus.qml:210
+#: ui/Tiempos.qml:189
 msgid "Notice"
 msgstr ""
 
-#: tiempobus.qml:229 tiempobus.qml:655 tiempobus.qml:700
+#: ui/Tiempos.qml:202 ui/NuevoFavorito.qml:27 ui/NuevoFavorito.qml:68
 msgid "Save"
 msgstr ""
 
-#: tiempobus.qml:240 tiempobus.qml:719
+#: ui/Tiempos.qml:214 ui/Preferencias.qml:27
 msgid "Settings"
 msgstr ""
 
-#: tiempobus.qml:257
-msgid "Favorites"
+#: ui/Tiempos.qml:334 ui/Tiempos.qml:347
+msgid "min"
 msgstr ""
 
-#: tiempobus.qml:289 tiempobus.qml:420
-msgid "Options"
+#: ui/Tiempos.qml:342
+msgid "At bus stop"
 msgstr ""
 
-#: tiempobus.qml:393
-msgid "Search"
+#: ui/Tiempos.qml:347 ui/Tiempos.qml:355
+msgid "and"
 msgstr ""
 
-#: tiempobus.qml:431 tiempobus.qml:567 components/RemovableBGLineas.qml:32
-#: components/RemovableBGLineas.qml:52
-msgid "Forward"
+#: ui/Tiempos.qml:355
+msgid "No data"
 msgstr ""
 
-#: tiempobus.qml:448 tiempobus.qml:568 components/RemovableBGLineas.qml:66
-msgid "Backward"
+#: components/MapaItem.qml:65 ui/Mapas.qml:63 main.qml:205
+msgid "Cancel"
 msgstr ""
 
-#: tiempobus.qml:544 tiempobus.qml:1268
-msgid "Select Bus Line"
-msgstr ""
-
-#: tiempobus.qml:627 tiempobus.qml:1270 tiempobus.qml:1300
-msgid "Select Bus Stop"
-msgstr ""
-
-#: tiempobus.qml:673
+#: ui/NuevoFavorito.qml:43
 msgid "Label"
 msgstr ""
 
-#: tiempobus.qml:682
+#: ui/NuevoFavorito.qml:52
 msgid "Description"
 msgstr ""
 
-#: tiempobus.qml:737
+#: ui/MapasLoader.qml:7 ui/Mapas.qml:29
+msgid "Maps"
+msgstr ""
+
+#: ui/Noticias.qml:28
+msgid "Notices and News"
+msgstr ""
+
+#: ui/Preferencias.qml:60
 msgid "Automatic Refresh"
 msgstr ""
 
-#: tiempobus.qml:812
+#: ui/Preferencias.qml:87
+msgid "Delete DataBase"
+msgstr ""
+
+#: ui/Preferencias.qml:90 ui/Favoritos.qml:116
+msgid "Delete"
+msgstr ""
+
+#: ui/Preferencias.qml:130
 msgid "This is a BETA version."
 msgstr ""
 
-#: tiempobus.qml:828
+#: ui/Preferencias.qml:144
 msgid "License GPLv3"
 msgstr ""
 
-#: tiempobus.qml:837
+#: ui/Preferencias.qml:152
 msgid ""
 "TiempoBus - Informacion sobre tiempos de paso de autobuses en Alicante\n"
-"Copyright (C) 2014 Alberto Montiel\n"
+"Copyright (C) 2015 Alberto Montiel\n"
 "\n"
 "This program is free software: you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -128,26 +140,93 @@ msgid ""
 "along with this program.  If not, see <http://www.gnu.org/licenses/>."
 msgstr ""
 
-#: tiempobus.qml:1026 tiempobus.qml:1040
-msgid "min"
+#: ui/Preferencias.qml:160
+msgid ""
+"Logo de la App compuesto con http://www.elegantthemes.com/blog/\n"
+"freebie-of-the-week/flat-icon-collection-update\n"
+"(http://www.gnu.org/licenses/gpl-2.0.html"
 msgstr ""
 
-#: tiempobus.qml:1035
-msgid "At bus stop"
+#: ui/Favoritos.qml:27
+msgid "Favorites"
 msgstr ""
 
-#: tiempobus.qml:1040 tiempobus.qml:1049
-msgid "and"
-msgstr ""
-
-#: tiempobus.qml:1049
-msgid "No data"
-msgstr ""
-
-#: components/RemovableBG.qml:32 components/RemovableBG.qml:66
-msgid "Delete"
-msgstr ""
-
-#: components/RemovableBG.qml:52
+#: ui/Favoritos.qml:85
 msgid "Modify"
+msgstr ""
+
+#: ui/Buscador.qml:27
+msgid "Search"
+msgstr ""
+
+#: ui/Buscador.qml:93 components/MapaSearchPopOver.qml:63
+msgid "Offline"
+msgstr ""
+
+#: ui/Buscador.qml:93 components/MapaSearchPopOver.qml:63
+msgid "Online"
+msgstr ""
+
+#: ui/Buscador.qml:182 ui/Buscador.qml:289
+msgid "Select Bus Line"
+msgstr ""
+
+#: ui/Buscador.qml:200
+msgid "Forward"
+msgstr ""
+
+#: ui/Buscador.qml:200
+msgid "Backward"
+msgstr ""
+
+#: ui/Buscador.qml:244 ui/Buscador.qml:294 ui/Buscador.qml:297
+#: ui/Buscador.qml:331 ui/Buscador.qml:334 ui/Buscador.qml:400
+#: ui/Buscador.qml:403
+msgid "Select Bus Stop"
+msgstr ""
+
+#: components/Errores.qml:29
+msgid "Data Error"
+msgstr ""
+
+#: components/Errores.qml:30
+msgid "Generic Error"
+msgstr ""
+
+#: components/Errores.qml:42 ui/Mapas.qml:52 main.qml:190
+msgid "Ok"
+msgstr ""
+
+#: ui/Mapas.qml:47
+msgid "WARNING!!"
+msgstr ""
+
+#: ui/Mapas.qml:49
+msgid ""
+"In the EMULATOR the map causes a failure in the application. But it works "
+"properly on the desktop and on mobile. It will be fixed in future versions"
+msgstr ""
+
+#: ui/Mapas.qml:233
+msgid "Address"
+msgstr ""
+
+#: ui/Mapas.qml:233
+msgid "Destination"
+msgstr ""
+
+#: ui/Mapas.qml:234
+msgid "Lines"
+msgstr ""
+
+#: main.qml:177
+msgid "Database Update"
+msgstr ""
+
+#: main.qml:178
+msgid "Download information bus lines from GitHub"
+msgstr ""
+
+#: main.qml:198
+msgid "Download"
 msgstr ""

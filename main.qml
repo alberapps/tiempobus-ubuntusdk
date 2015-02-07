@@ -16,9 +16,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import QtQuick 2.0
+import QtQuick 2.2
 import Ubuntu.Components 1.1
 import QtQuick.LocalStorage 2.0
+import Ubuntu.Components.Popups 1.0
 import "ui"
 import "components"
 
@@ -60,16 +61,23 @@ MainView {
 
     property variant preferencias:{'paradaInicial':'4450', 'cargaAutomatica': 'false'};
 
+    property string modoBuscador: 'offline';
 
     PageStack {
         id: pageStack
 
         Component.onCompleted: {
             //Para desktop Quitar para crear click
-            //i18n.domain = 'tiempobus'
-            //i18n.bindtextdomain("tiempobus","/usr/share/locale")
+            i18n.domain = 'tiempobus'
+            i18n.bindtextdomain("tiempobus","/usr/share/locale")
+            //i18n.bindtextdomain("com.ubuntu.developer.alberapps.tiempobus","/home/albert/UbuntuSDK/git/tiempobus/share/locale")
             //Fin para desktop
-            push(tabs)
+
+
+
+            push(tabs);
+
+            controlBaseDatosLineas();
         }
 
 
@@ -88,6 +96,7 @@ MainView {
 
             Tiempos {
                 objectName: "tiempos"
+                id:idTiempos
             }
 
             Favoritos {
@@ -101,6 +110,7 @@ MainView {
 
             Mapas {
                 objectName: "mapas"
+
             }
 
             Noticias {
@@ -131,7 +141,16 @@ MainView {
         id: indeterminateBar
         indeterminate: true
         visible: false
-        anchors.centerIn: parent
+        //anchors.centerIn: parent
+        anchors {
+            bottom: parent.bottom
+            right: parent.right
+            left: parent.left
+
+            bottomMargin: units.gu(1.5)
+            leftMargin: units.gu(1.5)
+            rightMargin: units.gu(1.5)
+        }
     }
 
     //Modelo para listado de favoritos
@@ -148,6 +167,53 @@ MainView {
 
     }
 
+    
+    Component {
+        id: dialogoActualizacion
+
+        Dialog {
+            id: dialogoActualizacion2
+
+            title: i18n.tr("Database Update")
+            text: i18n.tr("Download information bus lines from GitHub")
+
+            //Barra de progreso
+            ProgressBar {
+                id: indeterminateBar2
+                indeterminate: true
+                visible: false
+
+            }
+
+            Button {
+                id: botonActulizaOk
+                text: i18n.tr("Ok")
+                onClicked: PopupUtils.close(dialogoActualizacion2)
+                visible: false
+            }
+
+
+            Button {
+                id: botonActulizaIniciar
+                text: i18n.tr("Download")
+                onClicked: { indeterminateBar2.visible = true; botonActulizaIniciar.visible = false; cargarDatosLineas(indeterminateBar2, botonActulizaOk); }
+                visible: true
+            }
+
+            Button {
+                id: botonActulizaCancelar
+                text: i18n.tr("Cancel")
+                onClicked: PopupUtils.close(dialogoActualizacion2)
+                visible: true
+            }
+
+
+        }
+
+
+
+    }
+    
 
     //PREFERENCIAS EN BASE DE DATOS. TODO: Cambiar en proximas versiones
 
@@ -210,6 +276,146 @@ MainView {
 
 
     }
+
+
+
+    //////////Iniciar base de datos lineas
+
+    function controlBaseDatosLineas(){
+
+        //cargarDatosLineas();
+
+        console.debug("**********PRUEBA DATOS");
+
+        //cargarDatosParada('4450');
+
+
+
+    }
+
+
+
+
+    function cargarDatosLineas(indeterminateBar, botonActulizaOk){
+
+
+        //indeterminateBar.visible = true;
+
+
+           var url = "https://raw.github.com/alberapps/tiempobus/gh-pages/update/precargainfolineas";
+
+           var doc = new XMLHttpRequest();
+
+           doc.open("GET", url, true);
+
+
+           doc.onreadystatechange = function(){
+
+               try{
+
+
+               if(doc.readyState === XMLHttpRequest.HEADERS_RECEIVED){
+
+
+               }else if(doc.readyState === XMLHttpRequest.DONE){
+
+                  // showRequestInfo("salida: " + doc.responseText);
+                   console.debug(doc.responseText);
+
+                   var texto = doc.responseText;
+
+
+                   actualizarBaseDatosLineas(texto);
+
+                    //Recargar informacion
+                   idTiempos.paradaSeleccionada();
+
+                   indeterminateBar.visible = false;
+                   botonActulizaOk.visible= true
+
+                //PopupUtils.close(dialogoActualizacion);
+
+
+               }
+
+
+
+               }catch(error){
+
+                   console.error(error);
+
+
+                   cErrores.manejarError('1');
+
+
+               }
+
+
+           }
+
+
+           //doc.setRequestHeader('Content-Type','text/xml; charset=utf-8');
+
+           doc.setRequestHeader('Content-Encoding', "UTF-8");
+
+
+
+
+
+           doc.send();
+
+    }
+
+
+
+
+    function actualizarBaseDatosLineas(texto){
+
+
+        var db = LocalStorage.openDatabaseSync("TiempoBusInfoLineasDB", "1.0", "Base de datos de favoritos", 1000000);
+
+        db.transaction(
+                    function(tx) {
+
+                        console.info("Cargando Base de Datos");
+
+                        // Create the database if it doesn't already exist
+                        tx.executeSql('CREATE TABLE IF NOT EXISTS LINEAS(LINEA_NUM TEXT, LINEA_DESC TEXT, DESTINO TEXT, PARADA TEXT, COORDENADAS TEXT, DIRECCION TEXT, CONEXION TEXT, OBSERVACIONES TEXT)');
+
+                        //Eliminar los datos anteriores
+                        tx.executeSql("DELETE FROM LINEAS");
+
+
+
+
+                        var lineas = texto.split('\n');
+
+                        //console.debug('lineas: ' + lineas.length);
+
+
+                        for(var i=0;i<lineas.length;i++){
+
+                            //Campos
+                            var campos = lineas[i].split(";;");
+
+                            //Insertar datos
+                            tx.executeSql('INSERT INTO LINEAS VALUES(?, ?, ?, ?, ?, ?, ?, ?)', [ campos[0], campos[1], campos[2], campos[3], campos[4], campos[5], campos[6], campos[7] ]);
+
+
+
+                        }
+
+                        console.info("Fin Carga Base de Datos: " + i + " registros");
+
+
+                    }
+                    )
+
+
+
+    }
+
+
 
 
 

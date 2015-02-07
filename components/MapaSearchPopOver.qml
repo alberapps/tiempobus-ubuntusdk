@@ -17,9 +17,9 @@
 *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 import QtQuick 2.0
-import Ubuntu.Components 0.1
-import Ubuntu.Components.ListItems 0.1 as ListItem
-import Ubuntu.Components.Popups 0.1
+import Ubuntu.Components 1.1
+import Ubuntu.Components.ListItems 1.0 as ListItem
+import Ubuntu.Components.Popups 1.0
 import QtQuick.XmlListModel 2.0
 import QtPositioning 5.2
 
@@ -54,6 +54,29 @@ Component
                 width: parent.width
                 placeholderText: "Address"
             }*/
+
+        OptionSelector {
+            id: modoConsultaMapa
+
+            objectName: 'modo_consulta_mapa'
+
+            model: [i18n.tr("Offline"), i18n.tr("Online")]
+
+            onDelegateClicked: {
+
+                 if (index === 0) {
+
+                     modoBuscador = 'offline';
+
+                 }else{
+
+                     modoBuscador = 'online';
+
+                 }
+
+            }
+        }
+
 
            /* OptionSelector
             {

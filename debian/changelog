@@ -1,5 +1,7 @@
-tiempobus (0.7) trusty; urgency=low
+tiempobus (0.8) utopic; urgency=low
 
   * Initial Release.
 
  -- Alberto Montiel <alberapps@gmail.com>  Sat, 24 Aug 2013 22:08:55 +0200
+
+

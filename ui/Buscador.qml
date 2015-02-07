@@ -16,11 +16,12 @@
 *  You should have received a copy of the GNU General Public License
 *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import QtQuick 2.0
+import QtQuick 2.2
 import Ubuntu.Components 1.1
 import Ubuntu.Components.ListItems 1.0 as ListItem
 import Ubuntu.Components 1.1 as Toolkit
 import Ubuntu.Components.Popups 1.0
+import QtQuick.LocalStorage 2.0
 
 Tab {
     title: i18n.tr("Search")
@@ -38,7 +39,7 @@ Tab {
                 fill: parent
             }
 
-            Component {
+            /*Component {
                 id: dialogBuscador
 
                 Dialog {
@@ -81,7 +82,32 @@ Tab {
                         onClicked: PopupUtils.close(dialogue)
                     }
                 }
+            }*/
+
+
+            OptionSelector {
+                id: modoConsulta
+
+                objectName: 'modo_consulta'
+
+                model: [i18n.tr("Offline"), i18n.tr("Online")]
+
+                onDelegateClicked: {
+
+                     if (index === 0) {
+
+                         modoBuscador = 'offline';
+
+                     }else{
+
+                         modoBuscador = 'online';
+
+                     }
+
+                }
             }
+
+
 
             //Formulario de datos
             Row {
@@ -110,6 +136,11 @@ Tab {
                         tabs.selectedTabIndex = 0
                     }
                 }
+
+
+
+
+
             }
 
             ListItem.ItemSelector {
@@ -117,6 +148,8 @@ Tab {
                 id: itemLineas
                 //text: i18n.tr("Lineas")
                 delegate: selectorDelegate
+
+                containerHeight: itemHeight * 7
 
                 onDelegateClicked: {
 
@@ -184,6 +217,8 @@ Tab {
                 id: itemParadas
                 //text: i18n.tr("Paradas")
                 delegate: selectorDelegateParada
+
+                containerHeight: itemHeight * 7
 
                 onDelegateClicked: {
 
@@ -271,8 +306,89 @@ Tab {
         }
     }
 
-    //Cargar la lista de paradas del sentido indicado
+
     function cargarParadas(linea, sentido) {
+
+        if(modoBuscador == 'offline'){
+            cargarParadasBD(linea, sentido);
+        }else{
+            cargarParadasMapa(linea, sentido);
+        }
+
+    }
+
+
+    //Cargar la lista de paradas del sentido indicado. Base de Datos
+    function cargarParadasBD(linea, sentido) {
+
+        indeterminateBar.visible = true
+
+        paradasList.clear()
+
+        //Opcion por defecto
+        paradasList.append({
+                               parada: "-1",
+                               descripcion: i18n.tr("Select Bus Stop"),
+                               lineas: "-",
+                               sentido: "-",
+                               direccion: i18n.tr("Select Bus Stop")
+                           })
+
+
+
+
+        var datosLineas = cargarDatosLinea(linea);
+
+
+        console.debug("datos linea: " + datosLineas[0].lineasDesc);
+        console.debug("datos linea: " + datosLineas[1].lineasDesc);
+
+
+
+        var destino = '';
+        var sentidoLinea = 'ida';
+
+        for(var i=0; i< datosLineas.length; i++){
+
+            if(destino !== '' && sentidoLinea !== 'vuelta'){
+
+                if(destino.trim() !== datosLineas[i].destino.trim()){
+                    sentidoLinea = 'vuelta';
+                }else{
+                    sentidoLinea = 'ida';
+                }
+
+            }
+
+            destino = datosLineas[i].destino;
+
+
+
+
+
+            if(sentidoLinea === sentido){
+
+                paradasList.append({
+                               parada: datosLineas[i].parada,
+                               descripcion: datosLineas[i].lineasDesc,
+                               lineas: datosLineas[i].conexion,
+                               sentido: datosLineas[i].destino,
+                               direccion: datosLineas[i].direccion
+                               })
+
+            }
+
+
+        }
+
+        indeterminateBar.visible = false
+
+    }
+
+
+
+    //Cargar la lista de paradas del sentido indicado
+    function cargarParadasMapa(linea, sentido) {
 
         indeterminateBar.visible = true
 
@@ -466,4 +582,64 @@ Tab {
 
         return elements
     }
+
+
+
+    /** FUNCIONES BASE DE DATOS LINEAS
+      */
+    //Cargar datos de la linea
+    function cargarDatosLinea(linea){
+
+        var db = LocalStorage.openDatabaseSync("TiempoBusInfoLineasDB", "1.0", "Base de datos de favoritos", 1000000);
+
+        var datosLineas = [];
+
+        db.transaction(
+                    function(tx) {
+
+
+                        console.debug('consulta linea: ' + linea);
+
+
+                        // Datos linea
+                        var rs = tx.executeSql('SELECT ROWID,* FROM LINEAS WHERE LINEA_NUM = \'' + linea + '\'');
+
+                        console.debug("resultados: " + rs.rows.length);
+
+
+
+                        if(rs.rows.length > 0 ){
+
+                            for(var i = 0;i<rs.rows.length;i++){
+
+                                datosLineas.push({"numLinea": rs.rows.item(i).LINEA_NUM, "lineasDesc": rs.rows.item(i).LINEA_DESC, "destino": rs.rows.item(i).DESTINO, "parada": rs.rows.item(i).PARADA, "coordenadas": rs.rows.item(i).COORDENADAS, "direccion": rs.rows.item(i).DIRECCION, "conexion": rs.rows.item(i).CONEXION, "observaciones": rs.rows.item(i).OBSERVACIONES});
+
+                            }
+
+                        }else{
+
+                            //datosParada = {"numLinea": '', "lineasDesc": ''}
+
+                        }
+
+
+
+
+
+
+
+
+                    }
+                    )
+
+
+
+
+
+        return datosLineas;
+
+    }
+
+
+
 }

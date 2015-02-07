@@ -16,7 +16,7 @@
 *  You should have received a copy of the GNU General Public License
 *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import QtQuick 2.0
+import QtQuick 2.2
 import Ubuntu.Components 1.1
 import QtQuick.LocalStorage 2.0
 import "../components"
@@ -82,7 +82,6 @@ Page {
     //Guardar favorito en la base de datos
     function guardarFavorito(titulo, descrip) {
 
-
         //.local/share/Qt Project/QtQmlViewer/QML/OfflineStorage/Databases
         var db = LocalStorage.openDatabaseSync("TiempoBusFavoritosDB", "1.0",
                                                "Base de datos de favoritos",
@@ -113,8 +112,8 @@ Page {
     }
 
     /*
-         * Cargar datos si se trata de una modificacion
-             */
+             * Cargar datos si se trata de una modificacion
+                          */
     function cargarDatosModificar() {
 
         if (favoritoIndex != null && favoritoIndex != '') {

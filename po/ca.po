@@ -1,121 +1,135 @@
-# Catalan translation for tiempobus
-# opyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
-# This file is distributed under the same license as the tiempobus package.
-# Alberto Montiel <alberapps@gmail.com>, 2014.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Alberto Montiel <alberapps@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tiempobus\n"
-"Report-Msgid-Bugs-To: Alberto Montiel <alberapps@gmail.com>\n"
-"POT-Creation-Date: 2014-07-08 19:50+0200\n"
-"PO-Revision-Date: 2014-07-08 22:16+0200\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-06 21:11+0100\n"
+"PO-Revision-Date: 2015-02-06 21:23+0100\n"
 "Last-Translator: Alberto Montiel <alberapps@gmail.com>\n"
 "Language-Team: espanyol; castellà <>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-07-08 19:16+0000\n"
-"X-Generator: Gtranslator 2.91.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
-#: tiempobus.qml:110
+#: ui/Tiempos.qml:29
 msgid "TiempoBus"
 msgstr "TempsBus"
 
-#: tiempobus.qml:134 tiempobus.qml:998
+#: ui/Tiempos.qml:88 ui/Tiempos.qml:316
 msgid "Bus Stop: "
-msgstr "Parada: "
+msgstr "Parada:"
 
-#: tiempobus.qml:140
+#: ui/Tiempos.qml:95
 msgid "Updated at: "
-msgstr "Actualitzat a les "
+msgstr "Actualitzat a les"
 
-#: tiempobus.qml:154
-msgid "Bus stop"
-msgstr "Parada"
-
-#: tiempobus.qml:166 tiempobus.qml:475
+#: ui/Tiempos.qml:115 components/MapaItem.qml:70 ui/Favoritos.qml:68
+#: ui/Buscador.qml:121
 msgid "Load"
 msgstr "Carregar"
 
-#: tiempobus.qml:186 tiempobus.qml:277
+#: ui/Tiempos.qml:121
+msgid "Bus stop"
+msgstr "Parada"
+
+#: ui/Tiempos.qml:144 ui/Favoritos.qml:52
 msgid "No information"
 msgstr "Sense informació"
 
-#: tiempobus.qml:186 tiempobus.qml:211
+#: ui/Tiempos.qml:145
+msgid "Check the Bus Timetable"
+msgstr "Consulta els horaris"
+
+#: ui/Tiempos.qml:146 ui/Tiempos.qml:191
 msgid ""
 "This application is UNofficial and its development is independent.\n"
 "Lines and times data offered and maintained by: subus.es\n"
 "Development: alberapps.blogspot.com - twitter.com/alberapps"
-msgstr "Esta aplicació NO és oficial i es desenvolupa de forma independent.\n"
+msgstr ""
+"Esta aplicació NO és oficial i es desenvolupa de forma independent.\n"
 "Dades de línies i temps oferits i mantinguts per: subus.es\n"
 "Desenvolupament: alberapps.blogspot.com - twitter.com/alberapps"
 
-#: tiempobus.qml:210
+#: ui/Tiempos.qml:189
 msgid "Notice"
 msgstr "Avís"
 
-#: tiempobus.qml:229 tiempobus.qml:655 tiempobus.qml:700
+#: ui/Tiempos.qml:202 ui/NuevoFavorito.qml:27 ui/NuevoFavorito.qml:68
 msgid "Save"
 msgstr "Guardar"
 
-#: tiempobus.qml:240 tiempobus.qml:719
+#: ui/Tiempos.qml:214 ui/Preferencias.qml:27
 msgid "Settings"
 msgstr "Preferències"
 
-#: tiempobus.qml:257
-msgid "Favorites"
-msgstr "Favorits"
+#: ui/Tiempos.qml:334 ui/Tiempos.qml:347
+msgid "min"
+msgstr "min"
 
-#: tiempobus.qml:289 tiempobus.qml:420
-msgid "Options"
-msgstr "Opcions"
+#: ui/Tiempos.qml:342
+msgid "At bus stop"
+msgstr "A la parada"
 
-#: tiempobus.qml:393
-msgid "Search"
-msgstr "Cercar"
+#: ui/Tiempos.qml:347 ui/Tiempos.qml:355
+msgid "and"
+msgstr "i"
 
-#: tiempobus.qml:431 tiempobus.qml:567 components/RemovableBGLineas.qml:32
-#: components/RemovableBGLineas.qml:52
-msgid "Forward"
-msgstr "Anar"
+#: ui/Tiempos.qml:355
+msgid "No data"
+msgstr "Sense Informació"
 
-#: tiempobus.qml:448 tiempobus.qml:568 components/RemovableBGLineas.qml:66
-msgid "Backward"
-msgstr "Tornar"
+#: components/MapaItem.qml:65 ui/Mapas.qml:63 main.qml:205
+msgid "Cancel"
+msgstr "Cancel·lar"
 
-#: tiempobus.qml:544 tiempobus.qml:1268
-msgid "Select Bus Line"
-msgstr "Selecciona Línia"
-
-#: tiempobus.qml:627 tiempobus.qml:1270 tiempobus.qml:1300
-msgid "Select Bus Stop"
-msgstr "Selecciona Parada"
-
-#: tiempobus.qml:673
+#: ui/NuevoFavorito.qml:43
 msgid "Label"
 msgstr "Etiqueta"
 
-#: tiempobus.qml:682
+#: ui/NuevoFavorito.qml:52
 msgid "Description"
 msgstr "Descripció"
 
-#: tiempobus.qml:737
+#: ui/MapasLoader.qml:7 ui/Mapas.qml:29
+msgid "Maps"
+msgstr "Mapes"
+
+#: ui/Noticias.qml:28
+msgid "Notices and News"
+msgstr "Avisos i Noticies"
+
+#: ui/Preferencias.qml:60
 msgid "Automatic Refresh"
 msgstr "Recàrrega Automàtica"
 
-#: tiempobus.qml:812
+#: ui/Preferencias.qml:87
+msgid "Delete DataBase"
+msgstr "Esborrar la Base de Dades"
+
+#: ui/Preferencias.qml:90 ui/Favoritos.qml:116
+msgid "Delete"
+msgstr "Esborrar"
+
+#: ui/Preferencias.qml:130
 msgid "This is a BETA version."
 msgstr "Esta és una versió BETA"
 
-#: tiempobus.qml:828
+#: ui/Preferencias.qml:144
 msgid "License GPLv3"
 msgstr "llicència GPLv3"
 
-#: tiempobus.qml:837
+#: ui/Preferencias.qml:152
 msgid ""
 "TiempoBus - Informacion sobre tiempos de paso de autobuses en Alicante\n"
-"Copyright (C) 2014 Alberto Montiel\n"
+"Copyright (C) 2015 Alberto Montiel\n"
 "\n"
 "This program is free software: you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -131,69 +145,95 @@ msgid ""
 "along with this program.  If not, see <http://www.gnu.org/licenses/>."
 msgstr ""
 
-#: tiempobus.qml:1026 tiempobus.qml:1040
-msgid "min"
+#: ui/Preferencias.qml:160
+msgid ""
+"Logo de la App compuesto con http://www.elegantthemes.com/blog/\n"
+"freebie-of-the-week/flat-icon-collection-update\n"
+"(http://www.gnu.org/licenses/gpl-2.0.html"
 msgstr ""
 
-#: tiempobus.qml:1035
-msgid "At bus stop"
-msgstr "A la parada"
+#: ui/Favoritos.qml:27
+msgid "Favorites"
+msgstr "Favorits"
 
-#: tiempobus.qml:1040 tiempobus.qml:1049
-msgid "and"
-msgstr "i"
-
-#: tiempobus.qml:1049
-msgid "No data"
-msgstr "Sense Informació"
-
-#: components/RemovableBG.qml:32 components/RemovableBG.qml:66
-msgid "Delete"
-msgstr "Elimina"
-
-#: components/RemovableBG.qml:52
+#: ui/Favoritos.qml:85
 msgid "Modify"
 msgstr "Modifica"
 
-#~ msgid "y"
-#~ msgstr "i"
+#: ui/Buscador.qml:27
+msgid "Search"
+msgstr "Cercar"
 
-#~ msgid "min."
-#~ msgstr "min."
+#: ui/Buscador.qml:93 components/MapaSearchPopOver.qml:63
+msgid "Offline"
+msgstr ""
 
-#~ msgid "&"
-#~ msgstr "i"
+#: ui/Buscador.qml:93 components/MapaSearchPopOver.qml:63
+msgid "Online"
+msgstr ""
 
-#~ msgid ""
-#~ "* Slide to the right, to Forward stops. Slide to the left to Backware "
-#~ "stops"
-#~ msgstr ""
-#~ "Lliscar a la dreta per a les parades d'anada ia l'esquerra per les de "
-#~ "tornada"
+#: ui/Buscador.qml:182 ui/Buscador.qml:289
+msgid "Select Bus Line"
+msgstr "Selecciona Línia"
 
-#~ msgid "* Slide up to display the menu"
-#~ msgstr "* Lliscar cap amunt per desplegar el menú"
+#: ui/Buscador.qml:200
+msgid "Forward"
+msgstr "Anar"
 
-#~ msgid ""
-#~ "* Click to load the favorite. Slide Right to Modify. Slide left to Remove"
-#~ msgstr ""
-#~ "* Click per carregar el favorit. Lliscar a la dreta per modificar, a la "
-#~ "dreta per esborrar"
+#: ui/Buscador.qml:200
+msgid "Backward"
+msgstr "Tornar"
 
-#~ msgid ""
-#~ "Time offered by ISAE system, which offers, in REAL TIME, the time of "
-#~ "arrival ESTIMATES in TAM net. These times may vary for reasons unrelated "
-#~ "to the app, as traffic, route changes, etc. Features using the local "
-#~ "database may not show the latest route changes. This application is "
-#~ "UNofficial and its development is independent. Line data and step times "
-#~ "obtained from: www.subus.es and isaealicante.subus.es/movil/index.aspx\n"
-#~ "Learn more: alberapps.blogspot.com and at Twitter: @alberapps"
-#~ msgstr ""
-#~ "Temps obtinguts del sistema ISAE, que oferix, en TEMPS REAL, la ESTIMACIÓ "
-#~ "de temps de pas de la xarxa TAM. Els temps poden variar per raons alienes "
-#~ "a l'aplicació, com el trànsit, canvis de recorregut, etc. Les funcions "
-#~ "que utilitzen la base de dades local, poden no disposar dels últims "
-#~ "canvis en els recorreguts. Esta aplicació NO és oficial i es desenvolupa "
-#~ "de forma independent. Dades de línies i temps obtinguts de: www.subus.es "
-#~ "i isaealicante.subus.es/movil\n"
-#~ "Més informació: alberapps.blogspot.com i al Twitter: @alberapps"
+#: ui/Buscador.qml:244 ui/Buscador.qml:294 ui/Buscador.qml:297
+#: ui/Buscador.qml:331 ui/Buscador.qml:334 ui/Buscador.qml:400
+#: ui/Buscador.qml:403
+msgid "Select Bus Stop"
+msgstr "Selecciona Línia"
+
+#: components/Errores.qml:29
+msgid "Data Error"
+msgstr "Error a les dades"
+
+#: components/Errores.qml:30
+msgid "Generic Error"
+msgstr "Error Genèric"
+
+#: components/Errores.qml:42 ui/Mapas.qml:52 main.qml:190
+msgid "Ok"
+msgstr "Acceptar"
+
+#: ui/Mapas.qml:47
+msgid "WARNING!!"
+msgstr "ADVERTÈNCIA!!"
+
+#: ui/Mapas.qml:49
+msgid ""
+"In the EMULATOR the map causes a failure in the application. But it works "
+"properly on the desktop and on mobile. It will be fixed in future versions"
+msgstr ""
+"En l'emulador el mapa provoca una fallada en l'aplicació. Però funciona "
+"correctament a l'escriptori i en mòbils. Es resoldrà en properes versions"
+
+#: ui/Mapas.qml:233
+msgid "Address"
+msgstr "Direcció"
+
+#: ui/Mapas.qml:233
+msgid "Destination"
+msgstr "Destinació"
+
+#: ui/Mapas.qml:234
+msgid "Lines"
+msgstr "Línies"
+
+#: main.qml:177
+msgid "Database Update"
+msgstr "Actualitzar la base de dades"
+
+#: main.qml:178
+msgid "Download information bus lines from GitHub"
+msgstr "Descarregar la informació de línies des de GitHub"
+
+#: main.qml:198
+msgid "Download"
+msgstr "Descarregar"

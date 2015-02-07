@@ -4,3 +4,5 @@ tiempobus.desktop usr/share/applications/
 *.png usr/share/tiempobus/
 *.js usr/share/tiempobus/
 components/*.qml usr/share/tiempobus/components/
+graphics/*.png usr/share/tiempobus/graphics/
+ui/*.qml usr/share/tiempobus/ui/
