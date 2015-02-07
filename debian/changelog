@@ -1,5 +1,12 @@
 tiempobus (0.8) utopic; urgency=low
 
+  * New version. Dadabase, news, maps
+
+ -- Alberto Montiel <alberapps@gmail.com>  Sat, 07 Feb 2015 13:17:55 +0200
+
+
+tiempobus (0.5) raring; urgency=low
+
   * Initial Release.
 
  -- Alberto Montiel <alberapps@gmail.com>  Sat, 24 Aug 2013 22:08:55 +0200
