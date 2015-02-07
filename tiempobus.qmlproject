@@ -23,6 +23,9 @@ Project {
         filter: "Makefile"
     }
     Files {
+        filter: "tiempobus"
+    }
+    Files {
         filter: "*.apparmor"
     }
     Files {
